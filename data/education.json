@@ -1,0 +1,24 @@
+{
+  "_instructions": "Add your education and certifications here.",
+  "sectionTitle": "Education & Certifications",
+  "certificationsTitle": "Certifications",
+  "education": [
+    {
+      "degree": "M.S.",
+      "school": "The University of Texas at Dallas",
+      "institution": "The University of Texas at Dallas",
+      "period": "Aug 2024 – May 2026",
+      "details": "GPA: 3.65/4.0",
+      "description": "GPA: 3.65/4.0"
+    },
+    {
+      "degree": "B.E.",
+      "school": "Bharati Vidyapeeth's College of Engineering",
+      "institution": "Bharati Vidyapeeth's College of Engineering",
+      "period": "Aug 2019 – May 2023",
+      "details": "GPA: 3.4/4.0",
+      "description": "GPA: 3.4/4.0"
+    }
+  ],
+  "certifications": []
+}

@@ -1,0 +1,365 @@
+{
+  "_instructions": "Add your projects.",
+  "sectionTitle": "Featured Work",
+  "projects": [
+    {
+      "title": "Automobile Price Prediction and Customer Segmentation",
+      "description": "Built an ensemble model using Random Forest and Gradient Boosting on 800K+ records, achieving 96% prediction accuracy to support data-driven pricing and revenue optimization. Applied K-Means and Hierarchical clustering for customer segmentation, improving targeting accuracy by 30% through feature engineering, data cleaning, and iterative model tuning. Translated model outputs into actionable pricing tiers and segment profiles, enabling stakeholders to quantify revenue impact and personalize offerings across customer cohorts.",
+      "longDescription": "Built an ensemble model using Random Forest and Gradient Boosting on 800K+ records, achieving 96% prediction accuracy to support data-driven pricing and revenue optimization. Applied K-Means and Hierarchical clustering for customer segmentation, improving targeting accuracy by 30% through feature engineering, data cleaning, and iterative model tuning. Translated model outputs into actionable pricing tiers and segment profiles, enabling stakeholders to quantify revenue impact and personalize offerings across customer cohorts.",
+      "category": "Backend Development",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Scikit-learn"
+      ],
+      "icon": "fas fa-project-diagram",
+      "color": "#FF6B6B",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": true,
+      "github": "",
+      "demo": "",
+      "links": {
+        "github": "",
+        "demo": "",
+        "live": ""
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "Az National Trucking – Hadoop, Hive & Tableau Big Data Analytics",
+      "description": "Ingested 8,000+ geolocation records and a 100-driver fleet dataset into HDFS using Cloudera Hadoop (HDP), created Hive tables via DDL, and queried data through Apache Impala connected to Tableau via ODBC driver for large-scale operational analytics. Built interactive Tableau dashboards analyzing unsafe driving events across 100 drivers and multiple truck models, identifying geographic hotspots and risk scores through behavioral analysis to surface key predictors of fleet safety and fuel efficiency. Delivered data-driven recommendations for route optimization and driver coaching, translating complex geospatial and behavioral patterns into actionable fleet performance insights for operational stakeholders.",
+      "longDescription": "Ingested 8,000+ geolocation records and a 100-driver fleet dataset into HDFS using Cloudera Hadoop (HDP), created Hive tables via DDL, and queried data through Apache Impala connected to Tableau via ODBC driver for large-scale operational analytics. Built interactive Tableau dashboards analyzing unsafe driving events across 100 drivers and multiple truck models, identifying geographic hotspots and risk scores through behavioral analysis to surface key predictors of fleet safety and fuel efficiency. Delivered data-driven recommendations for route optimization and driver coaching, translating complex geospatial and behavioral patterns into actionable fleet performance insights for operational stakeholders.",
+      "category": "Software Development",
+      "technologies": [
+        "Hadoop",
+        "Hive",
+        "Impala",
+        "Tableau"
+      ],
+      "icon": "fas fa-project-diagram",
+      "color": "#4ECDC4",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "",
+      "demo": "",
+      "links": {
+        "github": "",
+        "demo": "",
+        "live": ""
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "cohort_analysis",
+      "description": "Learning project built with modern web technologies",
+      "longDescription": "Learning project built with modern web technologies",
+      "category": "Software Development",
+      "technologies": [
+        "Jupyter Notebook"
+      ],
+      "icon": "fas fa-project-diagram",
+      "color": "#FFE66D",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/cohort_analysis",
+      "demo": "https://github.com/Pranav0520/cohort_analysis",
+      "links": {
+        "github": "https://github.com/Pranav0520/cohort_analysis",
+        "demo": "https://github.com/Pranav0520/cohort_analysis",
+        "live": "https://github.com/Pranav0520/cohort_analysis"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "real-time-financial-analysis-trading-system",
+      "description": "Hands-on learning experience with modern frameworks",
+      "longDescription": "Hands-on learning experience with modern frameworks",
+      "category": "Backend Development",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Java",
+        "SCSS",
+        "Python",
+        "Dockerfile"
+      ],
+      "icon": "fas fa-brain",
+      "color": "#A8DADC",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system",
+      "demo": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system",
+      "links": {
+        "github": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system",
+        "demo": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system",
+        "live": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "Dynamic-Player-Manager",
+      "description": "A player management and roster optimization system for the Boston Bruins hockey team. Combines SQL and MongoDB to track player stats and suggest the best lineup based on performance and game conditions. Built using Python and Streamlit.",
+      "longDescription": "A player management and roster optimization system for the Boston Bruins hockey team. Combines SQL and MongoDB to track player stats and suggest the best lineup based on performance and game conditions. Built using Python and Streamlit.",
+      "category": "Backend Development",
+      "technologies": [
+        "Python"
+      ],
+      "icon": "fas fa-project-diagram",
+      "color": "#B19CD9",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/Dynamic-Player-Manager",
+      "demo": "https://github.com/Pranav0520/Dynamic-Player-Manager",
+      "links": {
+        "github": "https://github.com/Pranav0520/Dynamic-Player-Manager",
+        "demo": "https://github.com/Pranav0520/Dynamic-Player-Manager",
+        "live": "https://github.com/Pranav0520/Dynamic-Player-Manager"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "contribution-history",
+      "description": "Generated GitHub contribution history",
+      "longDescription": "Generated GitHub contribution history",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#FF8B94",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/contribution-history",
+      "demo": "https://github.com/Pranav0520/contribution-history",
+      "links": {
+        "github": "https://github.com/Pranav0520/contribution-history",
+        "demo": "https://github.com/Pranav0520/contribution-history",
+        "live": "https://github.com/Pranav0520/contribution-history"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "uber-trip-analysis",
+      "description": "Learning project built with modern web technologies",
+      "longDescription": "Learning project built with modern web technologies",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#FF6B6B",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/uber-trip-analysis",
+      "demo": "https://github.com/Pranav0520/uber-trip-analysis",
+      "links": {
+        "github": "https://github.com/Pranav0520/uber-trip-analysis",
+        "demo": "https://github.com/Pranav0520/uber-trip-analysis",
+        "live": "https://github.com/Pranav0520/uber-trip-analysis"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "f1-data-analysis",
+      "description": "Personal project for exploring modern development practices",
+      "longDescription": "Personal project for exploring modern development practices",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#4ECDC4",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/f1-data-analysis",
+      "demo": "https://github.com/Pranav0520/f1-data-analysis",
+      "links": {
+        "github": "https://github.com/Pranav0520/f1-data-analysis",
+        "demo": "https://github.com/Pranav0520/f1-data-analysis",
+        "live": "https://github.com/Pranav0520/f1-data-analysis"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "nursing-home-financial-analysis",
+      "description": "Portfolio project showcasing development capabilities",
+      "longDescription": "Portfolio project showcasing development capabilities",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#FFE66D",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/nursing-home-financial-analysis",
+      "demo": "https://github.com/Pranav0520/nursing-home-financial-analysis",
+      "links": {
+        "github": "https://github.com/Pranav0520/nursing-home-financial-analysis",
+        "demo": "https://github.com/Pranav0520/nursing-home-financial-analysis",
+        "live": "https://github.com/Pranav0520/nursing-home-financial-analysis"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "Webportfolio",
+      "description": "GitHub repository: Webportfolio",
+      "longDescription": "GitHub repository: Webportfolio",
+      "category": "Backend Development",
+      "technologies": [
+        "CSS",
+        "SCSS",
+        "HTML",
+        "JavaScript",
+        "Python"
+      ],
+      "icon": "fas fa-brain",
+      "color": "#A8DADC",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/Webportfolio",
+      "demo": "https://github.com/Pranav0520/Webportfolio",
+      "links": {
+        "github": "https://github.com/Pranav0520/Webportfolio",
+        "demo": "https://github.com/Pranav0520/Webportfolio",
+        "live": "https://github.com/Pranav0520/Webportfolio"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "Car-Dealership-Dashboard",
+      "description": "GitHub repository: Car-Dealership-Dashboard",
+      "longDescription": "GitHub repository: Car-Dealership-Dashboard",
+      "category": "Software Development",
+      "technologies": [
+        "R"
+      ],
+      "icon": "fas fa-project-diagram",
+      "color": "#B19CD9",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/Car-Dealership-Dashboard",
+      "demo": "https://github.com/Pranav0520/Car-Dealership-Dashboard",
+      "links": {
+        "github": "https://github.com/Pranav0520/Car-Dealership-Dashboard",
+        "demo": "https://github.com/Pranav0520/Car-Dealership-Dashboard",
+        "live": "https://github.com/Pranav0520/Car-Dealership-Dashboard"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "resume",
+      "description": "GitHub repository: resume",
+      "longDescription": "GitHub repository: resume",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#FF8B94",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/resume",
+      "demo": "https://github.com/Pranav0520/resume",
+      "links": {
+        "github": "https://github.com/Pranav0520/resume",
+        "demo": "https://github.com/Pranav0520/resume",
+        "live": "https://github.com/Pranav0520/resume"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "Sales-Insights-SQL",
+      "description": "GitHub repository: Sales-Insights-SQL",
+      "longDescription": "GitHub repository: Sales-Insights-SQL",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#FF6B6B",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/Sales-Insights-SQL",
+      "demo": "https://github.com/Pranav0520/Sales-Insights-SQL",
+      "links": {
+        "github": "https://github.com/Pranav0520/Sales-Insights-SQL",
+        "demo": "https://github.com/Pranav0520/Sales-Insights-SQL",
+        "live": "https://github.com/Pranav0520/Sales-Insights-SQL"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "COVID-19-Global-Vaccine-Tracker",
+      "description": "GitHub repository: COVID-19-Global-Vaccine-Tracker",
+      "longDescription": "GitHub repository: COVID-19-Global-Vaccine-Tracker",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#4ECDC4",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker",
+      "demo": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker",
+      "links": {
+        "github": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker",
+        "demo": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker",
+        "live": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    },
+    {
+      "title": "Youtube-Channel-Insights",
+      "description": "GitHub repository: Youtube-Channel-Insights",
+      "longDescription": "GitHub repository: Youtube-Channel-Insights",
+      "category": "Development",
+      "technologies": [],
+      "icon": "fas fa-project-diagram",
+      "color": "#FFE66D",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "featured": false,
+      "github": "https://github.com/Pranav0520/Youtube-Channel-Insights",
+      "demo": "https://github.com/Pranav0520/Youtube-Channel-Insights",
+      "links": {
+        "github": "https://github.com/Pranav0520/Youtube-Channel-Insights",
+        "demo": "https://github.com/Pranav0520/Youtube-Channel-Insights",
+        "live": "https://github.com/Pranav0520/Youtube-Channel-Insights"
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2026"
+      }
+    }
+  ]
+}

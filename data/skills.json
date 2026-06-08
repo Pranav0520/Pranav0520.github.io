@@ -1,0 +1,60 @@
+{
+  "_instructions": "Organize your skills with vibrant colors.",
+  "sectionTitle": "Skills & Technologies",
+  "categories": [
+    {
+      "category": "Programming Languages",
+      "icon": "fas fa-code",
+      "color": "#FF6B6B",
+      "skills": [
+        "SQL",
+        "Python",
+        "R"
+      ]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "icon": "fas fa-toolbox",
+      "color": "#4ECDC4",
+      "skills": [
+        "Scikit-learn"
+      ]
+    },
+    {
+      "category": "Tools & Platforms",
+      "icon": "fas fa-wrench",
+      "color": "#FFE66D",
+      "skills": [
+        "Advanced Excel",
+        "Pivot Tables",
+        "VBA",
+        "Power BI",
+        "Tableau",
+        "Salesforce",
+        "Hadoop",
+        "Hive",
+        "Impala"
+      ]
+    },
+    {
+      "category": "Technical Skills",
+      "icon": "fas fa-laptop-code",
+      "color": "#A8DADC",
+      "skills": [
+        "Data Engineering",
+        "Snowflake",
+        "MySQL",
+        "PostgreSQL",
+        "ETL Pipelines",
+        "Data Modeling",
+        "Data Quality Frameworks",
+        "Statistical Analysis",
+        "A/B Testing",
+        "KPI Design",
+        "Forecasting",
+        "Dashboard Development",
+        "Machine Learning"
+      ]
+    }
+  ]
+}

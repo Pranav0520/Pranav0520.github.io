@@ -1,0 +1,18 @@
+{
+  "profile": {
+    "name": "Pranav Grover",
+    "title": "Data Analyst",
+    "bio": "Results-driven Data Analyst with 3+ years of experience engineering ETL pipelines, building scalable dashboards, and translating large-scale data into actionable insights using SQL, Python, Power BI, and Tableau on Snowflake, pursuing an MS in Business Analytics and AI (UT Dallas, May 2026)."
+  },
+  "contact": {
+    "email": "pranavg0520@outlook.com",
+    "phone": "469.569.2821",
+    "githubUsername": "Pranav0520",
+    "linkedin": "linkedin.com/in/pranav-grover-utd"
+  },
+  "siteConfig": {
+    "domain": "",
+    "title": "Pranav Grover - Portfolio",
+    "description": "Results-driven Data Analyst with 3+ years of experience engineering ETL pipelines, building scalable dashboards, and translating large-scale data into actionable insights using SQL, Python, Power BI, and Tableau on Snowflake, pursuing an MS in Business Analytics and AI (UT Dallas, May 2026)."
+  }
+}
