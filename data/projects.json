@@ -6,7 +6,7 @@
       "title": "Automobile Price Prediction and Customer Segmentation",
       "description": "Built an ensemble model using Random Forest and Gradient Boosting on 800K+ records, achieving 96% prediction accuracy to support data-driven pricing and revenue optimization. Applied K-Means and Hierarchical clustering for customer segmentation, improving targeting accuracy by 30% through feature engineering, data cleaning, and iterative model tuning. Translated model outputs into actionable pricing tiers and segment profiles, enabling stakeholders to quantify revenue impact and personalize offerings across customer cohorts.",
       "longDescription": "Built an ensemble model using Random Forest and Gradient Boosting on 800K+ records, achieving 96% prediction accuracy to support data-driven pricing and revenue optimization. Applied K-Means and Hierarchical clustering for customer segmentation, improving targeting accuracy by 30% through feature engineering, data cleaning, and iterative model tuning. Translated model outputs into actionable pricing tiers and segment profiles, enabling stakeholders to quantify revenue impact and personalize offerings across customer cohorts.",
-      "category": "Backend Development",
+      "category": "Machine Learning",
       "technologies": [
         "Python",
         "SQL",
@@ -25,14 +25,14 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     },
     {
       "title": "Az National Trucking – Hadoop, Hive & Tableau Big Data Analytics",
       "description": "Ingested 8,000+ geolocation records and a 100-driver fleet dataset into HDFS using Cloudera Hadoop (HDP), created Hive tables via DDL, and queried data through Apache Impala connected to Tableau via ODBC driver for large-scale operational analytics. Built interactive Tableau dashboards analyzing unsafe driving events across 100 drivers and multiple truck models, identifying geographic hotspots and risk scores through behavioral analysis to surface key predictors of fleet safety and fuel efficiency. Delivered data-driven recommendations for route optimization and driver coaching, translating complex geospatial and behavioral patterns into actionable fleet performance insights for operational stakeholders.",
       "longDescription": "Ingested 8,000+ geolocation records and a 100-driver fleet dataset into HDFS using Cloudera Hadoop (HDP), created Hive tables via DDL, and queried data through Apache Impala connected to Tableau via ODBC driver for large-scale operational analytics. Built interactive Tableau dashboards analyzing unsafe driving events across 100 drivers and multiple truck models, identifying geographic hotspots and risk scores through behavioral analysis to surface key predictors of fleet safety and fuel efficiency. Delivered data-driven recommendations for route optimization and driver coaching, translating complex geospatial and behavioral patterns into actionable fleet performance insights for operational stakeholders.",
-      "category": "Software Development",
+      "category": "Big Data Analytics",
       "technologies": [
         "Hadoop",
         "Hive",
@@ -42,7 +42,7 @@
       "icon": "fas fa-project-diagram",
       "color": "#4ECDC4",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
-      "featured": false,
+      "featured": true,
       "github": "",
       "demo": "",
       "links": {
@@ -52,16 +52,19 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     },
     {
-      "title": "cohort_analysis",
-      "description": "Learning project built with modern web technologies",
-      "longDescription": "Learning project built with modern web technologies",
-      "category": "Software Development",
+      "title": "Cohort Analysis",
+      "description": "Customer cohort analysis in Python and pandas that groups users by their first-purchase period and tracks retention and repeat behavior over time, adapted to work with Elasticsearch data via the eland library.",
+      "longDescription": "Customer cohort analysis in Python and pandas that groups users by their first-purchase period and tracks retention and repeat behavior over time, adapted to work with Elasticsearch data via the eland library.",
+      "category": "Data Analysis",
       "technologies": [
-        "Jupyter Notebook"
+        "Python",
+        "pandas",
+        "Jupyter Notebook",
+        "Elasticsearch"
       ],
       "icon": "fas fa-project-diagram",
       "color": "#FFE66D",
@@ -80,18 +83,16 @@
       }
     },
     {
-      "title": "real-time-financial-analysis-trading-system",
-      "description": "Hands-on learning experience with modern frameworks",
-      "longDescription": "Hands-on learning experience with modern frameworks",
-      "category": "Backend Development",
+      "title": "Real-Time Financial Analysis & Trading System",
+      "description": "A real-time financial analysis and trading system that ingests and processes live market data to power automated analytics and trading decisions, packaged as a containerized multi-service application.",
+      "longDescription": "A real-time financial analysis and trading system that ingests and processes live market data to power automated analytics and trading decisions, packaged as a containerized multi-service application.",
+      "category": "Data Engineering",
       "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Java",
-        "SCSS",
         "Python",
-        "Dockerfile"
+        "Java",
+        "JavaScript",
+        "HTML",
+        "Docker"
       ],
       "icon": "fas fa-brain",
       "color": "#A8DADC",
@@ -110,12 +111,15 @@
       }
     },
     {
-      "title": "Dynamic-Player-Manager",
-      "description": "A player management and roster optimization system for the Boston Bruins hockey team. Combines SQL and MongoDB to track player stats and suggest the best lineup based on performance and game conditions. Built using Python and Streamlit.",
-      "longDescription": "A player management and roster optimization system for the Boston Bruins hockey team. Combines SQL and MongoDB to track player stats and suggest the best lineup based on performance and game conditions. Built using Python and Streamlit.",
-      "category": "Backend Development",
+      "title": "Dynamic Player Manager",
+      "description": "A player management and roster-optimization system for the Boston Bruins that combines SQL and MongoDB to track player statistics and recommends the best lineup based on performance, opponent strength, and venue conditions, served through an interactive Streamlit app.",
+      "longDescription": "A player management and roster-optimization system for the Boston Bruins that combines SQL and MongoDB to track player statistics and recommends the best lineup based on performance, opponent strength, and venue conditions, served through an interactive Streamlit app.",
+      "category": "Data Application",
       "technologies": [
-        "Python"
+        "Python",
+        "SQL",
+        "MongoDB",
+        "Streamlit"
       ],
       "icon": "fas fa-project-diagram",
       "color": "#B19CD9",
@@ -130,37 +134,17 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     },
     {
-      "title": "contribution-history",
-      "description": "Generated GitHub contribution history",
-      "longDescription": "Generated GitHub contribution history",
-      "category": "Development",
-      "technologies": [],
-      "icon": "fas fa-project-diagram",
-      "color": "#FF8B94",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
-      "featured": false,
-      "github": "https://github.com/Pranav0520/contribution-history",
-      "demo": "https://github.com/Pranav0520/contribution-history",
-      "links": {
-        "github": "https://github.com/Pranav0520/contribution-history",
-        "demo": "https://github.com/Pranav0520/contribution-history",
-        "live": "https://github.com/Pranav0520/contribution-history"
-      },
-      "stats": {
-        "status": "Completed",
-        "year": "2026"
-      }
-    },
-    {
-      "title": "uber-trip-analysis",
-      "description": "Learning project built with modern web technologies",
-      "longDescription": "Learning project built with modern web technologies",
-      "category": "Development",
-      "technologies": [],
+      "title": "Uber Trip Analysis",
+      "description": "An interactive Power BI dashboard analyzing a month of Uber trip data to surface booking trends, customer behavior, revenue generation, and operational efficiency.",
+      "longDescription": "An interactive Power BI dashboard analyzing a month of Uber trip data to surface booking trends, customer behavior, revenue generation, and operational efficiency.",
+      "category": "Business Intelligence",
+      "technologies": [
+        "Power BI"
+      ],
       "icon": "fas fa-project-diagram",
       "color": "#FF6B6B",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
@@ -178,11 +162,14 @@
       }
     },
     {
-      "title": "f1-data-analysis",
-      "description": "Personal project for exploring modern development practices",
-      "longDescription": "Personal project for exploring modern development practices",
-      "category": "Development",
-      "technologies": [],
+      "title": "F1 Data Analysis",
+      "description": "A SQL and Tableau analysis of Formula 1 racing data from 1953–2020, modeling race results, driver and team performance, and circuit details to visualize historical trends and key performance metrics.",
+      "longDescription": "A SQL and Tableau analysis of Formula 1 racing data from 1953–2020, modeling race results, driver and team performance, and circuit details to visualize historical trends and key performance metrics.",
+      "category": "Data Analysis",
+      "technologies": [
+        "SQL",
+        "Tableau"
+      ],
       "icon": "fas fa-project-diagram",
       "color": "#4ECDC4",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
@@ -200,11 +187,14 @@
       }
     },
     {
-      "title": "nursing-home-financial-analysis",
-      "description": "Portfolio project showcasing development capabilities",
-      "longDescription": "Portfolio project showcasing development capabilities",
-      "category": "Development",
-      "technologies": [],
+      "title": "Nursing Home Financial Analysis",
+      "description": "An analysis of U.S. nursing homes' financial performance, quality indicators, and regulatory penalties from 2015–2021 using multiple CMS datasets, with a focus on the impact of COVID-19 on net income, staffing, and operations across facility sizes.",
+      "longDescription": "An analysis of U.S. nursing homes' financial performance, quality indicators, and regulatory penalties from 2015–2021 using multiple CMS datasets, with a focus on the impact of COVID-19 on net income, staffing, and operations across facility sizes.",
+      "category": "Data Analysis",
+      "technologies": [
+        "SQL",
+        "Power BI"
+      ],
       "icon": "fas fa-project-diagram",
       "color": "#FFE66D",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
@@ -222,38 +212,10 @@
       }
     },
     {
-      "title": "Webportfolio",
-      "description": "GitHub repository: Webportfolio",
-      "longDescription": "GitHub repository: Webportfolio",
-      "category": "Backend Development",
-      "technologies": [
-        "CSS",
-        "SCSS",
-        "HTML",
-        "JavaScript",
-        "Python"
-      ],
-      "icon": "fas fa-brain",
-      "color": "#A8DADC",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
-      "featured": false,
-      "github": "https://github.com/Pranav0520/Webportfolio",
-      "demo": "https://github.com/Pranav0520/Webportfolio",
-      "links": {
-        "github": "https://github.com/Pranav0520/Webportfolio",
-        "demo": "https://github.com/Pranav0520/Webportfolio",
-        "live": "https://github.com/Pranav0520/Webportfolio"
-      },
-      "stats": {
-        "status": "Completed",
-        "year": "2026"
-      }
-    },
-    {
-      "title": "Car-Dealership-Dashboard",
-      "description": "GitHub repository: Car-Dealership-Dashboard",
-      "longDescription": "GitHub repository: Car-Dealership-Dashboard",
-      "category": "Software Development",
+      "title": "Car Dealership Dashboard",
+      "description": "A car-dealership analytics and prediction dashboard built in R that forecasts car prices, segments customers, and optimizes inventory, presenting interactive visualizations to support pricing strategy and business operations.",
+      "longDescription": "A car-dealership analytics and prediction dashboard built in R that forecasts car prices, segments customers, and optimizes inventory, presenting interactive visualizations to support pricing strategy and business operations.",
+      "category": "Machine Learning",
       "technologies": [
         "R"
       ],
@@ -270,37 +232,19 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     },
     {
-      "title": "resume",
-      "description": "GitHub repository: resume",
-      "longDescription": "GitHub repository: resume",
-      "category": "Development",
-      "technologies": [],
-      "icon": "fas fa-project-diagram",
-      "color": "#FF8B94",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
-      "featured": false,
-      "github": "https://github.com/Pranav0520/resume",
-      "demo": "https://github.com/Pranav0520/resume",
-      "links": {
-        "github": "https://github.com/Pranav0520/resume",
-        "demo": "https://github.com/Pranav0520/resume",
-        "live": "https://github.com/Pranav0520/resume"
-      },
-      "stats": {
-        "status": "Completed",
-        "year": "2026"
-      }
-    },
-    {
-      "title": "Sales-Insights-SQL",
-      "description": "GitHub repository: Sales-Insights-SQL",
-      "longDescription": "GitHub repository: Sales-Insights-SQL",
-      "category": "Development",
-      "technologies": [],
+      "title": "Sales Insights (SQL)",
+      "description": "A Power BI sales and revenue dashboard connected directly to a MySQL database that analyzes performance across markets, customers, products, and regions, consolidating multi-currency sales into a unified INR view for clearer financial reporting.",
+      "longDescription": "A Power BI sales and revenue dashboard connected directly to a MySQL database that analyzes performance across markets, customers, products, and regions, consolidating multi-currency sales into a unified INR view for clearer financial reporting.",
+      "category": "Business Intelligence",
+      "technologies": [
+        "Power BI",
+        "MySQL",
+        "SQL"
+      ],
       "icon": "fas fa-project-diagram",
       "color": "#FF6B6B",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
@@ -314,15 +258,17 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     },
     {
-      "title": "COVID-19-Global-Vaccine-Tracker",
-      "description": "GitHub repository: COVID-19-Global-Vaccine-Tracker",
-      "longDescription": "GitHub repository: COVID-19-Global-Vaccine-Tracker",
-      "category": "Development",
-      "technologies": [],
+      "title": "COVID-19 Global Vaccine Tracker",
+      "description": "A Power BI dashboard tracking global COVID-19 vaccination trends — partially vs. fully vaccinated populations, regional disparities, and the correlation between GDP per capita and vaccination progress — to support data-driven distribution planning.",
+      "longDescription": "A Power BI dashboard tracking global COVID-19 vaccination trends — partially vs. fully vaccinated populations, regional disparities, and the correlation between GDP per capita and vaccination progress — to support data-driven distribution planning.",
+      "category": "Business Intelligence",
+      "technologies": [
+        "Power BI"
+      ],
       "icon": "fas fa-project-diagram",
       "color": "#4ECDC4",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
@@ -336,15 +282,18 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     },
     {
-      "title": "Youtube-Channel-Insights",
-      "description": "GitHub repository: Youtube-Channel-Insights",
-      "longDescription": "GitHub repository: Youtube-Channel-Insights",
-      "category": "Development",
-      "technologies": [],
+      "title": "YouTube Channel Insights",
+      "description": "A Power BI dashboard analyzing YouTube channel performance across views, likes, comments, and engagement for both videos and shorts, using ETL preprocessing to highlight underperforming content and the relationship between video length and views.",
+      "longDescription": "A Power BI dashboard analyzing YouTube channel performance across views, likes, comments, and engagement for both videos and shorts, using ETL preprocessing to highlight underperforming content and the relationship between video length and views.",
+      "category": "Business Intelligence",
+      "technologies": [
+        "Power BI",
+        "ETL"
+      ],
       "icon": "fas fa-project-diagram",
       "color": "#FFE66D",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
@@ -358,7 +307,7 @@
       },
       "stats": {
         "status": "Completed",
-        "year": "2026"
+        "year": "2025"
       }
     }
   ]

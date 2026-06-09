@@ -3,18 +3,18 @@
   "greeting": "Hi, I'm",
   "name": "Pranav Grover",
   "title": "Data Analyst",
-  "summary": "Data Analyst with 2+ years of experience specializing in SQL, Python, R.",
+  "summary": "Data Analyst with 3+ years of experience in SQL, Python, Power BI, and Tableau, turning large-scale data into actionable insights.",
   "avatarUrl": "/avatar.png",
-  "tagline": "Data Analyst",
+  "tagline": "",
   "highlights": [
     {
       "icon": "fas fa-briefcase",
-      "text": "2+ Years Experience",
+      "text": "3+ Years Experience",
       "color": "#FF6B6B"
     },
     {
       "icon": "fas fa-project-diagram",
-      "text": "15+ Projects Completed",
+      "text": "12+ Projects Completed",
       "color": "#4ECDC4"
     },
     {
@@ -42,7 +42,7 @@
   "socialLinks": [
     {
       "platform": "LinkedIn",
-      "url": "linkedin.com/in/pranav-grover-utd",
+      "url": "https://linkedin.com/in/pranav-grover-utd",
       "icon": "fab fa-linkedin"
     },
     {

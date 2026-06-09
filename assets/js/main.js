@@ -1,767 +1,765 @@
-// ============================================
-// Portfolio Application - Main JavaScript
-// ============================================
+/* Aurora Dark — render functions (generated) + bootstrap */
 
-document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
-});
+/* ---- render: nav+hero ---- */
+function renderNav(nav){
+  var brandName = (nav && nav.brand && nav.brand.name) || "Pranav Grover";
+  var brandHref = (nav && nav.brand && nav.brand.href) || "#hero";
+  var parts = brandName.trim().split(/\s+/);
+  var first = parts.shift() || brandName;
+  var rest = parts.join(" ");
+  var brandHtml = '<span>' + first + '</span>'
+    + (rest ? ' <span class="nv-brand-sur accent-text">' + rest + '</span>' : '');
 
-// ============================================
-// Initialize Application
-// ============================================
-async function initializeApp() {
-    try {
-        // Initialize particles background
-        initializeParticles();
+  var items = (nav && nav.menuItems) || [];
+  var links = items.map(function(it){
+    var icon = it.icon ? '<i class="' + it.icon + '" aria-hidden="true"></i>' : '';
+    return '<li><a class="nv-link" href="' + it.href + '">' + icon
+      + '<span>' + it.text + '</span></a></li>';
+  }).join('');
 
-        // Load all data sections
-        await Promise.all([
-            loadSiteConfig(),
-            loadNavigation(),
-            loadHero(),
-            loadAbout(),
-            loadExperience(),
-            loadSkills(),
-            loadProjects(),
-            loadEducation(),
-            loadContact(),
-            loadFooter()
-        ]);
-
-        // Initialize interactive features
-        initializeNavigation();
-        initializeScrollEffects();
-        initializeScrollReveal();
-        initializeBackToTop();
-
-        console.log('Portfolio loaded successfully!');
-    } catch (error) {
-        console.error('Error initializing application:', error);
-    }
+  return ''
+    + '<div class="container nv-inner">'
+    +   '<a class="nv-brand" href="' + brandHref + '" aria-label="' + brandName + ' — home">'
+    +     '<span class="nv-dot" aria-hidden="true"></span>' + brandHtml
+    +   '</a>'
+    +   '<ul class="nv-menu" id="nv-menu">' + links + '</ul>'
+    +   '<button class="nv-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nv-menu">'
+    +     '<span></span><span></span><span></span>'
+    +   '</button>'
+    + '</div>';
 }
 
-// ============================================
-// Load Site Configuration
-// ============================================
-async function loadSiteConfig() {
-    try {
-        const response = await fetch('data/site-config.json');
-        const data = await response.json();
+function renderHero(hero){
+  hero = hero || {};
+  var greeting = hero.greeting || "Hi, I'm";
+  var fullName = hero.name || "Pranav Grover";
+  var nameParts = fullName.trim().split(/\s+/);
+  var firstName = nameParts.shift() || fullName;
+  var surname = nameParts.join(" ");
+  var title = hero.title || "Data Analyst";
+  var summary = hero.summary || "";
 
-        // Update meta tags
-        document.title = data.title;
-        document.querySelector('meta[name="description"]').setAttribute('content', data.description);
-        document.querySelector('meta[name="keywords"]').setAttribute('content', data.keywords);
-        document.querySelector('meta[name="author"]').setAttribute('content', data.author);
-    } catch (error) {
-        console.error('Error loading site config:', error);
-    }
+  // Kicker derived from title + program tag
+  var kicker = '<p class="eyebrow hero-kicker">' + title + ' &middot; UT Dallas ’26</p>';
+
+  // Name headline (clamped, surname accent, never clips)
+  var nameHtml = '<h1 class="hero-name" id="hero-heading">'
+    + '<span class="hero-greet">' + greeting + '</span>'
+    + '<span class="hero-line">' + firstName + '</span>'
+    + (surname ? '<span class="hero-line accent-text">' + surname + '</span>' : '')
+    + '</h1>';
+
+  // Role line under name
+  var roleHtml = '<p class="hero-role"><span class="hero-role-dot" aria-hidden="true"></span>'
+    + 'Available for full-time &middot; Dallas, TX</p>';
+
+  // Lead paragraph (bold the discipline)
+  var lead = summary
+    .replace('Data Analyst', '<strong>Data Analyst</strong>')
+    .replace('actionable insights', '<strong>actionable insights</strong>');
+  var leadHtml = '<p class="hero-lead">' + lead + '</p>';
+
+  // CTA buttons
+  var buttons = (hero.cta && hero.cta.buttons) || [];
+  var btnHtml = buttons.map(function(b){
+    var cls = (b.type === 'primary') ? 'btn btn--primary' : 'btn btn--ghost';
+    var ext = b.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+    var ic = (b.type === 'primary')
+      ? '<i class="fas fa-paper-plane" aria-hidden="true"></i>'
+      : '<i class="fas fa-arrow-right" aria-hidden="true"></i>';
+    return '<a class="' + cls + '" href="' + b.href + '"' + ext + '>'
+      + '<span>' + b.text + '</span>' + ic + '</a>';
+  }).join('');
+  // Extra résumé download button
+  btnHtml += '<a class="btn btn--ghost" href="assets/files/resume.pdf" download>'
+    + '<i class="fas fa-arrow-down-to-line" aria-hidden="true"></i>'
+    + '<i class="fas fa-download" aria-hidden="true" style="display:none"></i>'
+    + '<span>Download Résumé</span></a>';
+  var ctaHtml = '<div class="hero-cta">' + btnHtml + '</div>';
+
+  // Stat row from highlights
+  var highlights = hero.highlights || [];
+  var statHtml = highlights.map(function(h){
+    return '<span class="hero-stat"><i class="' + h.icon + '" aria-hidden="true"></i>'
+      + '<span>' + h.text + '</span></span>';
+  }).join('');
+  var statsHtml = '<div class="hero-stats">' + statHtml + '</div>';
+
+  // Social links
+  var socials = hero.socialLinks || [];
+  var socHtml = socials.map(function(s){
+    var isMail = /^mailto:/.test(s.url);
+    var ext = (!isMail) ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return '<a class="hero-social" href="' + s.url + '"' + ext
+      + ' aria-label="' + s.platform + '"><i class="' + s.icon + '" aria-hidden="true"></i></a>';
+  }).join('');
+  var socialsHtml = '<div class="hero-socials">' + socHtml + '</div>';
+
+  var left = '<div class="hero-left">'
+    + '<div class="reveal" style="--d:.04s">' + kicker + '</div>'
+    + '<div class="reveal" style="--d:.10s">' + nameHtml + '</div>'
+    + '<div class="reveal" style="--d:.16s">' + roleHtml + '</div>'
+    + '<div class="reveal" style="--d:.22s">' + leadHtml + '</div>'
+    + '<div class="reveal" style="--d:.28s">' + ctaHtml + '</div>'
+    + '<div class="reveal" style="--d:.34s">' + statsHtml + '</div>'
+    + '<div class="reveal" style="--d:.40s">' + socialsHtml + '</div>'
+    + '</div>';
+
+  // Right: portrait
+  var right = '<div class="hero-right reveal" style="--d:.18s">'
+    + '<div class="hero-portrait">'
+    +   '<span class="hero-halo" aria-hidden="true"></span>'
+    +   '<div class="hero-frame">'
+    +     '<img class="hero-img" src="assets/images/profile.jpg" '
+    +       'alt="Portrait of ' + fullName + ', ' + title + ', wearing a navy blazer over a light-blue shirt" '
+    +       'width="820" height="876" loading="eager" decoding="async">'
+    +   '</div>'
+    + '</div>'
+    + '</div>';
+
+  // Scroll indicator
+  var si = hero.scrollIndicator || { text:"Scroll to explore", icon:"fas fa-chevron-down" };
+  var scroll = '<a class="hero-scroll" href="#about" aria-label="' + si.text + '">'
+    + '<span>' + si.text + '</span>'
+    + '<i class="' + si.icon + '" aria-hidden="true"></i></a>';
+
+  return '<div class="hero-grid">' + left + right + '</div>' + scroll;
 }
 
-// ============================================
-// Load Navigation
-// ============================================
-async function loadNavigation() {
-    try {
-        const response = await fetch('data/navigation.json');
-        const data = await response.json();
+/* ---- render: about+experience ---- */
+function renderAbout(about){
+  var about_ = about || {};
+  var paras = Array.isArray(about_.paragraphs) ? about_.paragraphs : [];
+  var stats = Array.isArray(about_.statistics) ? about_.statistics : [];
+  var cv = about_.downloadCV || {};
 
-        // Set brand name
-        const brandElement = document.getElementById('nav-brand');
-        if (brandElement) {
-            brandElement.textContent = data.brand.name;
-            brandElement.href = data.brand.href;
-        }
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
 
-        // Build navigation menu
-        const navMenu = document.getElementById('nav-menu');
-        if (navMenu) {
-            navMenu.innerHTML = data.menuItems.map(item => `
-                <li>
-                    <a href="${item.href}" class="nav-link">
-                        <i class="${item.icon}"></i>
-                        ${item.text}
-                    </a>
-                </li>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading navigation:', error);
-    }
+  var introHtml = paras.map(function(p, i){
+    var cls = 'ab-lead' + (i === 0 ? ' ab-lead--first' : '');
+    return '<p class="' + cls + '">' + esc(p) + '</p>';
+  }).join('');
+
+  var ctaHtml = '';
+  if (cv.text){
+    ctaHtml =
+      '<div class="ab-cta reveal" style="--d:.18s">' +
+        '<a class="btn btn--primary" href="' + esc(cv.href || '#') + '"' +
+          (cv.href ? ' download' : '') + '>' +
+          (cv.icon ? '<i class="' + esc(cv.icon) + '" aria-hidden="true"></i>' : '') +
+          esc(cv.text) +
+        '</a>' +
+      '</div>';
+  }
+
+  var statsHtml = stats.map(function(s, i){
+    var raw = String(s.value == null ? '' : s.value).trim();
+    var m = raw.match(/^([\d.,]+)(.*)$/);
+    var num = m ? m[1].replace(/,/g,'') : '0';
+    var suffix = m ? m[2] : raw;
+    var color = s.color ? esc(s.color) : '';
+    var delay = (0.06 * (i + 1)).toFixed(2);
+    return (
+      '<div class="ab-stat glass glass--hover reveal" style="--d:.' +
+        String(delay).split('.')[1] + 's;' +
+        (color ? '--ab-c:' + color + ';' : '') + '">' +
+        '<span class="ab-ic">' +
+          '<i class="' + esc(s.icon || 'fas fa-circle') + '" aria-hidden="true"></i>' +
+        '</span>' +
+        '<span class="ab-meta">' +
+          '<span class="ab-num" data-count="' + esc(num) + '"' +
+            (suffix ? ' data-suffix="' + esc(suffix) + '"' : '') + '>0</span>' +
+          '<span class="ab-label">' + esc(s.label || '') + '</span>' +
+        '</span>' +
+      '</div>'
+    );
+  }).join('');
+
+  return (
+    '<div class="container">' +
+      '<div class="section-head reveal">' +
+        '<span class="eyebrow">About</span>' +
+        '<h2 class="section-title">' + esc(about_.sectionTitle || 'About Me') + '</h2>' +
+      '</div>' +
+      '<div class="ab-wrap">' +
+        '<div class="ab-intro reveal" style="--d:.06s">' +
+          introHtml +
+          ctaHtml +
+        '</div>' +
+        '<div class="ab-metrics">' +
+          statsHtml +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  );
 }
 
-// ============================================
-// Load Hero Section
-// ============================================
-async function loadHero() {
-    try {
-        const response = await fetch('data/hero.json');
-        const data = await response.json();
+function renderExperience(exp){
+  var exp_ = exp || {};
+  var roles = Array.isArray(exp_.experiences) ? exp_.experiences : [];
 
-        // Set text content
-        document.getElementById('hero-greeting').textContent = data.greeting;
-        document.getElementById('hero-name').innerHTML = `${data.name.split(' ')[0]} <span>${data.name.split(' ').slice(1).join(' ')}</span>`;
-        document.getElementById('hero-title').textContent = data.title;
-        document.getElementById('hero-tagline').textContent = data.tagline;
-        document.getElementById('hero-summary').textContent = data.summary;
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
 
-        // Render highlights
-        const highlightsContainer = document.getElementById('hero-highlights');
-        if (highlightsContainer && data.highlights) {
-            highlightsContainer.innerHTML = data.highlights.map(highlight => `
-                <div class="highlight-item">
-                    <i class="${highlight.icon}" style="color: ${highlight.color}"></i>
-                    <span>${highlight.text}</span>
-                </div>
-            `).join('');
-        }
+  var itemsHtml = roles.map(function(r, i){
+    var resp = Array.isArray(r.responsibilities) ? r.responsibilities : [];
+    var bullets = resp.map(function(b){
+      return '<li class="xp-li">' + esc(b) + '</li>';
+    }).join('');
 
-        // Render CTA buttons
-        const ctaContainer = document.getElementById('hero-cta');
-        if (ctaContainer && data.cta && data.cta.buttons) {
-            ctaContainer.innerHTML = data.cta.buttons.map(button => `
-                <a href="${button.href}" class="btn btn-${button.type}">
-                    ${button.icon ? `<i class="${button.icon}"></i>` : ''}
-                    ${button.text}
-                </a>
-            `).join('');
-        }
+    var metaParts = [];
+    if (r.company) metaParts.push('<span class="xp-co">' + esc(r.company) + '</span>');
+    if (r.location) metaParts.push('<span>' + esc(r.location) + '</span>');
+    if (r.period) metaParts.push('<span>' + esc(r.period) + '</span>');
+    var meta = metaParts.join('<span class="xp-sep" aria-hidden="true">&bull;</span>');
 
-        // Render social links
-        const socialContainer = document.getElementById('hero-social');
-        if (socialContainer && data.socialLinks) {
-            socialContainer.innerHTML = data.socialLinks.map(link => `
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="${link.platform}">
-                    <i class="${link.icon}"></i>
-                </a>
-            `).join('');
-        }
+    var delay = (0.08 * (i + 1)).toFixed(2);
 
-        // Render scroll indicator
-        const scrollIndicator = document.getElementById('scroll-indicator');
-        if (scrollIndicator && data.scrollIndicator) {
-            scrollIndicator.innerHTML = `
-                <span>${data.scrollIndicator.text}</span>
-                <i class="${data.scrollIndicator.icon}"></i>
-            `;
-        }
-    } catch (error) {
-        console.error('Error loading hero section:', error);
-    }
+    return (
+      '<article class="xp-item reveal" style="--d:.' +
+        String(delay).split('.')[1] + 's">' +
+        '<div class="xp-card glass glass--hover">' +
+          '<header class="xp-head">' +
+            (r.logo ? '<span class="xp-logo"><img src="' + esc(r.logo) + '" alt="' +
+              esc(r.company || '') + ' logo" loading="lazy" width="46" height="46"></span>' : '') +
+            '<div class="xp-headtext">' +
+              '<h3 class="xp-title">' + esc(r.title || '') + '</h3>' +
+              '<p class="xp-meta">' + meta + '</p>' +
+            '</div>' +
+          '</header>' +
+          '<ul class="xp-list">' + bullets + '</ul>' +
+        '</div>' +
+      '</article>'
+    );
+  }).join('');
+
+  return (
+    '<div class="container">' +
+      '<div class="section-head reveal">' +
+        '<span class="eyebrow">Experience</span>' +
+        '<h2 class="section-title">' + esc(exp_.sectionTitle || 'Professional Experience') + '</h2>' +
+      '</div>' +
+      '<div class="xp-timeline">' +
+        itemsHtml +
+      '</div>' +
+    '</div>'
+  );
 }
 
-// ============================================
-// Load About Section
-// ============================================
-async function loadAbout() {
-    try {
-        const response = await fetch('data/about.json');
-        const data = await response.json();
+/* ---- render: skills+work ---- */
+function renderSkills(skills){
+  var data = skills || {};
+  var cats = Array.isArray(data.categories) ? data.categories : [];
+  var title = data.sectionTitle || 'The toolkit behind the analysis';
 
-        // Set section title
-        document.getElementById('about-title').textContent = data.sectionTitle;
+  var rows = cats.map(function(c, i){
+    var color = c.color || 'var(--accent)';
+    var list = Array.isArray(c.skills) ? c.skills : [];
+    var icon = c.icon || 'fa-solid fa-layer-group';
+    var n = list.length;
+    var tags = list.map(function(s){
+      return '<span class="pill sk-tag" style="--sk-c:' + color + '">' + esc(s) + '</span>';
+    }).join('');
+    var d = (0.06 + i * 0.05).toFixed(2);
+    return ''+
+      '<div class="glass sk-row reveal" style="--sk-c:' + color + ';--d:' + d + 's">'+
+        '<div class="sk-rowhead">'+
+          '<span class="sk-ico"><i class="' + esc(icon) + '" aria-hidden="true"></i></span>'+
+          '<span>'+
+            '<span class="sk-cat">' + esc(c.category || 'Skills') + '</span>'+
+            '<span class="sk-count mono">' + n + ' ' + (n === 1 ? 'tool' : 'tools') + '</span>'+
+          '</span>'+
+        '</div>'+
+        '<div class="sk-tags">' + tags + '</div>'+
+      '</div>';
+  }).join('');
 
-        // Render paragraphs
-        const textContainer = document.getElementById('about-text');
-        if (textContainer && data.paragraphs) {
-            textContainer.innerHTML = data.paragraphs.map(paragraph => `
-                <p>${paragraph}</p>
-            `).join('');
-        }
+  return ''+
+    '<div class="container">'+
+      '<div class="section-head reveal">'+
+        '<span class="eyebrow">Stack</span>'+
+        '<h2 class="section-title">' + esc(title) + '</h2>'+
+      '</div>'+
+      '<div class="sk-wrap">' + rows + '</div>'+
+    '</div>';
 
-        // Render statistics
-        const statsContainer = document.getElementById('about-stats');
-        if (statsContainer && data.statistics) {
-            statsContainer.innerHTML = data.statistics.map(stat => `
-                <div class="stat-card">
-                    <i class="${stat.icon}" style="color: ${stat.color}"></i>
-                    <span class="stat-value">${stat.value}</span>
-                    <span class="stat-label">${stat.label}</span>
-                </div>
-            `).join('');
-        }
-
-        // Render download CV button
-        const actionsContainer = document.getElementById('about-actions');
-        if (actionsContainer && data.downloadCV) {
-            actionsContainer.innerHTML = `
-                <a href="${data.downloadCV.href}" download class="btn btn-primary">
-                    <i class="${data.downloadCV.icon}"></i>
-                    ${data.downloadCV.text}
-                </a>
-            `;
-        }
-    } catch (error) {
-        console.error('Error loading about section:', error);
-    }
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
 }
 
-// ============================================
-// Load Experience Section
-// ============================================
-async function loadExperience() {
-    try {
-        const response = await fetch('data/experience.json');
-        const data = await response.json();
+function renderWork(projects){
+  var data = projects || {};
+  var list = Array.isArray(data.projects) ? data.projects : [];
+  var title = data.sectionTitle || 'Selected work';
 
-        // Set section title
-        document.getElementById('experience-title').textContent = data.sectionTitle;
+  var featured = list.filter(function(p){ return p && p.featured; });
+  var rest = list.filter(function(p){ return !(p && p.featured); });
 
-        // Render timeline
-        const timelineContainer = document.getElementById('experience-timeline');
-        if (timelineContainer && data.experiences) {
-            timelineContainer.innerHTML = data.experiences.map(exp => `
-                <div class="timeline-item">
-                    <div class="timeline-empty"></div>
-                    <div class="timeline-icon" style="background: ${exp.color}">
-                        <i class="${exp.icon}"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="experience-header">
-                            <h3 class="experience-title">${exp.title}</h3>
-                            <p class="experience-company">
-                                ${exp.company} ${exp.location ? `• ${exp.location}` : ''}
-                            </p>
-                            <p class="experience-period">
-                                <i class="fas fa-calendar-alt"></i>
-                                ${exp.period}
-                                ${exp.type ? `<span class="experience-type">• ${exp.type}</span>` : ''}
-                            </p>
-                        </div>
-                        <p class="experience-description">${exp.description}</p>
-                        ${exp.responsibilities ? `
-                            <ul class="experience-responsibilities">
-                                ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
-                            </ul>
-                        ` : ''}
-                        ${exp.technologies ? `
-                            <div class="experience-tech">
-                                ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                </div>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading experience section:', error);
+  var featHTML = featured.length
+    ? '<div class="wk-featured">' + featured.map(function(p,i){ return card(p, true, i); }).join('') + '</div>'
+    : '';
+  var gridHTML = rest.length
+    ? '<div class="wk-grid">' + rest.map(function(p,i){ return card(p, false, i + featured.length); }).join('') + '</div>'
+    : '';
+
+  return ''+
+    '<div class="container">'+
+      '<div class="section-head reveal">'+
+        '<span class="eyebrow">Selected Work</span>'+
+        '<h2 class="section-title">' + esc(title) + '</h2>'+
+      '</div>'+
+      featHTML + gridHTML +
+    '</div>';
+
+  function card(p, hero, idx){
+    var color = p.color || 'var(--accent)';
+    var icon = p.icon || 'fa-solid fa-chart-line';
+    var techs = Array.isArray(p.technologies) ? p.technologies : [];
+    var links = p.links || {};
+    var stats = p.stats || {};
+    var d = (0.06 + (idx || 0) * 0.05).toFixed(2);
+
+    var tagHTML = techs.map(function(t){
+      return '<span class="pill wk-tag">' + esc(t) + '</span>';
+    }).join('');
+
+    var gh = links.github && String(links.github).trim();
+    var demo = (links.demo && String(links.demo).trim()) || (links.live && String(links.live).trim());
+    var linkParts = [];
+    if(gh){
+      linkParts.push('<a class="wk-link" href="' + esc(gh) + '" target="_blank" rel="noopener noreferrer" aria-label="View source code for ' + esc(p.title || 'project') + ' on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>');
     }
+    if(demo){
+      linkParts.push('<a class="wk-link" href="' + esc(demo) + '" target="_blank" rel="noopener noreferrer" aria-label="Open live demo of ' + esc(p.title || 'project') + '"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Live Demo</a>');
+    }
+    var linksHTML = linkParts.length
+      ? '<div class="wk-links">' + linkParts.join('') + '</div>'
+      : '<span class="wk-case mono"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Case study</span>';
+
+    var status = stats.status ? '<span class="wk-status"><span class="wk-dot"></span>' + esc(stats.status) + '</span>' : '';
+    var year = stats.year ? '<span class="wk-year">' + esc(stats.year) + '</span>' : '';
+    var metaHTML = (status || year)
+      ? '<span class="wk-meta">' + status + year + '</span>'
+      : '';
+
+    return ''+
+      '<article class="glass glass--hover wk-card reveal' + (hero ? ' wk-hero' : '') + '" style="--wk-c:' + color + ';--d:' + d + 's">'+
+        '<div class="wk-cardtop">'+
+          '<div>'+
+            '<span class="wk-cat">' + esc(p.category || 'Project') + '</span>'+
+            '<h3 class="wk-title">' + esc(p.title || 'Untitled') + '</h3>'+
+          '</div>'+
+          '<span class="wk-ico"><i class="' + esc(icon) + '" aria-hidden="true"></i></span>'+
+        '</div>'+
+        (p.description ? '<p class="wk-desc">' + esc(p.description) + '</p>' : '')+
+        (tagHTML ? '<div class="wk-tags">' + tagHTML + '</div>' : '')+
+        '<div class="wk-foot">' + linksHTML + metaHTML + '</div>'+
+      '</article>';
+  }
+
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
 }
 
-// ============================================
-// Load Skills Section
-// ============================================
-async function loadSkills() {
-    try {
-        const response = await fetch('data/skills.json');
-        const data = await response.json();
+/* ---- render: edu+contact+footer ---- */
+function renderEducation(edu) {
+  edu = edu || {};
+  var items = Array.isArray(edu.education) ? edu.education : [];
+  var title = edu.sectionTitle || 'Education';
 
-        // Set section title
-        document.getElementById('skills-title').textContent = data.sectionTitle;
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
-        // Render skill categories
-        const skillsGrid = document.getElementById('skills-grid');
-        if (skillsGrid && data.categories) {
-            skillsGrid.innerHTML = data.categories.map(category => `
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon" style="background: ${category.color}20; color: ${category.color}">
-                            <i class="${category.icon}"></i>
-                        </div>
-                        <h3 class="skill-category-title">${category.category}</h3>
-                    </div>
-                    <div class="skill-list">
-                        ${category.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading skills section:', error);
-    }
+  var cards = items.map(function (e, i) {
+    var idx = ('0' + (i + 1)).slice(-2);
+    var degree = esc(e.degree || '');
+    var school = esc(e.school || e.institution || '');
+    var period = e.period ? esc(e.period) : '';
+    var details = e.details ? esc(e.details) : '';
+
+    var periodHtml = period
+      ? '<span class="edu-period"><i class="far fa-calendar" aria-hidden="true"></i>' + period + '</span>'
+      : '';
+    var gpaHtml = details
+      ? '<span class="edu-gpa"><i class="fas fa-chart-line" aria-hidden="true"></i>' + details + '</span>'
+      : '';
+    var metaHtml = (periodHtml || gpaHtml)
+      ? '<div class="edu-meta">' + periodHtml + gpaHtml + '</div>'
+      : '';
+
+    return '' +
+      '<article class="edu-card glass glass--hover reveal" style="--d:' + (0.08 + i * 0.08).toFixed(2) + 's">' +
+        '<div class="edu-card-top">' +
+          '<span class="edu-index mono">' + idx + '</span>' +
+          '<span class="edu-cap"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>' +
+        '</div>' +
+        '<h3 class="edu-degree">' + degree + '</h3>' +
+        '<p class="edu-school">' + school + '</p>' +
+        metaHtml +
+      '</article>';
+  }).join('');
+
+  return '' +
+    '<div class="container">' +
+      '<div class="section-head reveal">' +
+        '<span class="eyebrow">Education</span>' +
+        '<h2 class="section-title">' + esc(title) + '</h2>' +
+      '</div>' +
+      '<div class="edu-grid">' + cards + '</div>' +
+    '</div>';
 }
 
-// ============================================
-// Load Projects Section
-// ============================================
-async function loadProjects() {
-    try {
-        const response = await fetch('data/projects.json');
-        const data = await response.json();
+function renderContact(contact) {
+  contact = contact || {};
+  var title = contact.sectionTitle || 'Get In Touch';
+  var subtitle = contact.subtitle || '';
+  var info = Array.isArray(contact.contactInfo) ? contact.contactInfo : [];
+  var socials = Array.isArray(contact.socialMedia) ? contact.socialMedia : [];
+  var form = contact.form || {};
+  var fields = Array.isArray(form.fields) ? form.fields : [];
 
-        // Set section title
-        document.getElementById('projects-title').textContent = data.sectionTitle;
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function escAttr(s) { return esc(s); }
 
-        // Render projects
-        const projectsGrid = document.getElementById('projects-grid');
-        if (projectsGrid && data.projects) {
-            projectsGrid.innerHTML = data.projects.map(project => `
-                <div class="project-card">
-                    <div class="project-icon" style="background: ${project.color}">
-                        <i class="${project.icon}"></i>
-                    </div>
-                    <div class="project-header">
-                        <h3 class="project-title">${project.title}</h3>
-                    </div>
-                    <p class="project-description">${project.description}</p>
-                    ${project.technologies ? `
-                        <div class="project-tech">
-                            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                    ${project.links ? `
-                        <div class="project-links">
-                            ${project.links.github ? `
-                                <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    Code
-                                </a>
-                            ` : ''}
-                            ${project.links.demo ? `
-                                <a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Live Demo
-                                </a>
-                            ` : ''}
-                        </div>
-                    ` : ''}
-                    ${project.stats ? `
-                        <div class="project-stats">
-                            ${Object.entries(project.stats).map(([key, value]) => `
-                                <div class="project-stat">
-                                    <span class="project-stat-value">${value}</span>
-                                    <span class="project-stat-label">${key}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading projects section:', error);
+  var rows = info.map(function (c) {
+    var color = c.color || '#5EE7FB';
+    var icon = c.icon || 'fas fa-circle';
+    var label = esc(c.label || '');
+    var value = esc(c.value || '');
+    var href = c.href || '#';
+    var isLocation = c.type === 'location';
+    var target = (!isLocation && /^https?:/i.test(href))
+      ? ' target="_blank" rel="noopener noreferrer"' : '';
+    var aria = label ? (label + ': ' + value) : value;
+
+    return '' +
+      '<a class="ct-row" href="' + escAttr(href) + '"' + target +
+        ' aria-label="' + escAttr(aria) + '" style="--ct-tint:' + escAttr(color) + '">' +
+        '<span class="ct-row-icon"><i class="' + escAttr(icon) + '" aria-hidden="true"></i></span>' +
+        '<span class="ct-row-body">' +
+          '<span class="ct-row-label">' + label + '</span>' +
+          '<span class="ct-row-value">' + value + '</span>' +
+        '</span>' +
+      '</a>';
+  }).join('');
+
+  var socialHtml = socials.length
+    ? '<div class="ct-socials">' + socials.map(function (s) {
+        var icon = s.icon || 'fas fa-link';
+        var platform = esc(s.platform || 'social');
+        var url = s.url || '#';
+        return '<a class="ct-social" href="' + escAttr(url) + '" target="_blank" rel="noopener noreferrer"' +
+          ' aria-label="' + platform + '"><i class="' + escAttr(icon) + '" aria-hidden="true"></i></a>';
+      }).join('') + '</div>'
+    : '';
+
+  var fieldsHtml = fields.map(function (f) {
+    var name = escAttr(f.name || '');
+    var id = 'ct-' + name;
+    var label = esc(f.label || '');
+    var ph = escAttr(f.placeholder || '');
+    var req = f.required ? ' required aria-required="true"' : '';
+    var reqMark = f.required ? ' <span aria-hidden="true">*</span>' : '';
+    var icon = f.icon ? '<i class="' + escAttr(f.icon) + '" aria-hidden="true"></i>' : '';
+
+    var control;
+    if ((f.type || 'text') === 'textarea') {
+      var rowsAttr = f.rows ? ' rows="' + parseInt(f.rows, 10) + '"' : ' rows="6"';
+      control = '<textarea class="ct-textarea" id="' + id + '" name="' + name + '"' +
+        rowsAttr + ' placeholder="' + ph + '"' + req + '></textarea>';
+    } else {
+      control = '<input class="ct-input" id="' + id + '" name="' + name +
+        '" type="' + escAttr(f.type || 'text') + '" placeholder="' + ph + '"' + req + '>';
     }
+
+    return '' +
+      '<div class="ct-field">' +
+        '<label class="ct-field-label" for="' + id + '">' + label + reqMark + '</label>' +
+        '<div class="ct-input-wrap">' + icon + control + '</div>' +
+      '</div>';
+  }).join('');
+
+  var submitText = esc(form.submitText || 'Send Message');
+  var submitIcon = form.submitIcon
+    ? '<i class="' + escAttr(form.submitIcon) + '" aria-hidden="true"></i>' : '';
+
+  return '' +
+    '<div class="container">' +
+      '<div class="section-head reveal">' +
+        '<span class="eyebrow">Contact</span>' +
+        '<h2 class="section-title">' + esc(title) + '</h2>' +
+        (subtitle ? '<p class="ct-sub">' + esc(subtitle) + '</p>' : '') +
+      '</div>' +
+      '<div class="ct-layout">' +
+        '<div class="ct-left reveal" style="--d:.08s">' +
+          rows +
+          socialHtml +
+        '</div>' +
+        '<form id="ct-form" class="ct-form glass reveal" style="--d:.16s" novalidate>' +
+          fieldsHtml +
+          '<button type="submit" class="btn btn--primary ct-submit">' +
+            submitText + submitIcon +
+          '</button>' +
+        '</form>' +
+      '</div>' +
+    '</div>';
 }
 
-// ============================================
-// Load Education Section
-// ============================================
-async function loadEducation() {
-    try {
-        const response = await fetch('data/education.json');
-        const data = await response.json();
+function renderFooter(footer) {
+  footer = footer || {};
+  var copyright = footer.copyright || {};
+  var tagline = footer.tagline || '';
+  var socials = Array.isArray(footer.socialLinks) ? footer.socialLinks : [];
+  var name = copyright.name || 'Pranav Grover';
+  var copyText = copyright.text || '';
 
-        // Set section title
-        document.getElementById('education-title').textContent = data.sectionTitle;
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function escAttr(s) { return esc(s); }
 
-        // Render education items
-        const educationGrid = document.getElementById('education-grid');
-        if (educationGrid && data.education) {
-            educationGrid.innerHTML = data.education.map(edu => `
-                <div class="education-card">
-                    <div class="education-icon" style="background: ${edu.color}20; color: ${edu.color}">
-                        <i class="${edu.icon}"></i>
-                    </div>
-                    <h3 class="education-degree">${edu.degree}</h3>
-                    <p class="education-institution">${edu.institution}</p>
-                    <p class="education-period">${edu.period}</p>
-                    <p class="education-description">${edu.description}</p>
-                    ${edu.achievements ? `
-                        <ul class="education-achievements">
-                            ${edu.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-                        </ul>
-                    ` : ''}
-                </div>
-            `).join('');
-        }
+  var socialHtml = socials.length
+    ? '<div class="ft-socials">' + socials.map(function (s) {
+        var icon = s.icon || 'fas fa-link';
+        var platform = esc(s.platform || 'link');
+        var url = s.url || '#';
+        var external = /^https?:/i.test(url)
+          ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return '<a class="ft-social" href="' + escAttr(url) + '"' + external +
+          ' aria-label="' + platform + '"><i class="' + escAttr(icon) + '" aria-hidden="true"></i></a>';
+      }).join('') + '</div>'
+    : '';
 
-        // Set certifications title
-        document.getElementById('certifications-title').textContent = data.certificationsTitle;
-
-        // Render certifications
-        const certificationsGrid = document.getElementById('certifications-grid');
-        if (certificationsGrid && data.certifications) {
-            certificationsGrid.innerHTML = data.certifications.map(cert => `
-                <div class="certification-card">
-                    <div class="certification-icon" style="color: ${cert.color}">
-                        <i class="${cert.icon}"></i>
-                    </div>
-                    <h4 class="certification-title">${cert.title}</h4>
-                    <p class="certification-issuer">${cert.issuer}</p>
-                    <p class="certification-date">${cert.date}</p>
-                </div>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading education section:', error);
-    }
+  return '' +
+    '<div class="container">' +
+      '<div class="ft-inner">' +
+        '<span class="ft-wordmark">' + esc(name) + '</span>' +
+        (tagline ? '<p class="ft-tagline mono">' + esc(tagline) + '</p>' : '') +
+        socialHtml +
+        (copyText ? '<p class="ft-copy">' + esc(copyText) + '</p>' : '') +
+      '</div>' +
+    '</div>';
 }
 
-// ============================================
-// Load Contact Section
-// ============================================
-async function loadContact() {
-    try {
-        const response = await fetch('data/contact.json');
-        const data = await response.json();
+/* =========================================================================
+   BOOTSTRAP — data fetch, render wiring, and interactions
+   (render functions are defined above this block)
+   ========================================================================= */
+(function () {
+  'use strict';
 
-        // Set section title and subtitle
-        document.getElementById('contact-title').textContent = data.sectionTitle;
-        document.getElementById('contact-subtitle').textContent = data.subtitle;
+  var REGIONS = [
+    ['#site-nav',          'navigation', 'renderNav'],
+    ['#hero-content',      'hero',       'renderHero'],
+    ['#about-content',     'about',      'renderAbout'],
+    ['#experience-content','experience', 'renderExperience'],
+    ['#skills-content',    'skills',     'renderSkills'],
+    ['#work-content',      'projects',   'renderWork'],
+    ['#education-content', 'education',  'renderEducation'],
+    ['#contact-content',   'contact',    'renderContact'],
+    ['#site-footer',       'footer',     'renderFooter']
+  ];
 
-        // Render contact info
-        const contactInfoContainer = document.getElementById('contact-info');
-        if (contactInfoContainer && data.contactInfo) {
-            contactInfoContainer.innerHTML = data.contactInfo.map(info => `
-                <a href="${info.href}" class="contact-info-item" ${info.type !== 'location' ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-                    <div class="contact-icon" style="background: ${info.color}20; color: ${info.color}">
-                        <i class="${info.icon}"></i>
-                    </div>
-                    <div class="contact-info-content">
-                        <h4>${info.label}</h4>
-                        <p>${info.value}</p>
-                    </div>
-                </a>
-            `).join('');
-        }
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Render contact form
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm && data.form) {
-            contactForm.action = data.form.action;
-            contactForm.method = data.form.method;
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
 
-            contactForm.innerHTML = data.form.fields.map(field => `
-                <div class="form-group">
-                    <label for="${field.name}">
-                        <i class="${field.icon}"></i>
-                        ${field.label}
-                    </label>
-                    ${field.type === 'textarea' ? `
-                        <textarea
-                            id="${field.name}"
-                            name="${field.name}"
-                            placeholder="${field.placeholder}"
-                            ${field.required ? 'required' : ''}
-                            rows="${field.rows || 5}"
-                        ></textarea>
-                    ` : `
-                        <input
-                            type="${field.type}"
-                            id="${field.name}"
-                            name="${field.name}"
-                            placeholder="${field.placeholder}"
-                            ${field.required ? 'required' : ''}
-                        />
-                    `}
-                </div>
-            `).join('') + `
-                <button type="submit" class="form-submit">
-                    <i class="${data.form.submitIcon}"></i>
-                    ${data.form.submitText}
-                </button>
-                <div class="form-message"></div>
-            `;
+  async function getJSON(file) {
+    var res = await fetch('data/' + file + '.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('Failed to load ' + file);
+    return res.json();
+  }
 
-            // Handle form submission
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const formMessage = contactForm.querySelector('.form-message');
-                const submitButton = contactForm.querySelector('.form-submit');
+  async function boot() {
+    var data = {};
+    await Promise.all(REGIONS.map(async function (r) {
+      try { data[r[1]] = await getJSON(r[1]); }
+      catch (e) { console.error(e); data[r[1]] = null; }
+    }));
 
-                try {
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-                    const formData = new FormData(contactForm);
-                    const response = await fetch(contactForm.action, {
-                        method: contactForm.method,
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        formMessage.textContent = data.form.successMessage;
-                        formMessage.className = 'form-message success';
-                        formMessage.style.display = 'block';
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    formMessage.textContent = data.form.errorMessage;
-                    formMessage.className = 'form-message error';
-                    formMessage.style.display = 'block';
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = `<i class="${data.form.submitIcon}"></i> ${data.form.submitText}`;
-                }
-            });
-        }
-
-        // Render social media links
-        const contactSocial = document.getElementById('contact-social');
-        if (contactSocial && data.socialMedia) {
-            contactSocial.innerHTML = data.socialMedia.map(social => `
-                <a href="${social.url}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="${social.platform}">
-                    <i class="${social.icon}"></i>
-                </a>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading contact section:', error);
-    }
-}
-
-// ============================================
-// Load Footer
-// ============================================
-async function loadFooter() {
-    try {
-        const response = await fetch('data/footer.json');
-        const data = await response.json();
-
-        // Set tagline
-        const taglineElement = document.getElementById('footer-tagline');
-        if (taglineElement) {
-            taglineElement.textContent = data.tagline;
-        }
-
-        // Render social links
-        const footerSocial = document.getElementById('footer-social');
-        if (footerSocial && data.socialLinks) {
-            footerSocial.innerHTML = data.socialLinks.map(link => `
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="${link.platform}">
-                    <i class="${link.icon}"></i>
-                </a>
-            `).join('');
-        }
-
-        // Set copyright
-        const copyrightElement = document.getElementById('footer-copyright');
-        if (copyrightElement) {
-            copyrightElement.textContent = data.copyright.text;
-        }
-
-        // Render footer links
-        const footerLinks = document.getElementById('footer-links');
-        if (footerLinks && data.links) {
-            footerLinks.innerHTML = data.links.map(link => `
-                <a href="${link.href}">${link.text}</a>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error loading footer:', error);
-    }
-}
-
-// ============================================
-// Initialize Navigation
-// ============================================
-function initializeNavigation() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Mobile menu toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // Close menu when clicking on a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
+    // Render each region with its function
+    REGIONS.forEach(function (r) {
+      var mount = $(r[0]);
+      var fn = window[r[2]];
+      if (mount && typeof fn === 'function' && data[r[1]]) {
+        try { mount.innerHTML = fn(data[r[1]]); }
+        catch (e) { console.error('render ' + r[2] + ' failed', e); }
+      }
     });
 
-    // Smooth scroll to sections
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+    // Optional site-config driven meta/title
+    try {
+      var sc = await getJSON('site-config');
+      if (sc && sc.title) document.title = sc.title;
+    } catch (e) { /* non-fatal */ }
 
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
+    initNav();
+    initReveal();
+    initCounters();
+    initBackToTop();
+    initContactForm(data.contact);
+  }
 
-// ============================================
-// Initialize Scroll Effects
-// ============================================
-function initializeScrollEffects() {
-    const navbar = document.getElementById('navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
+  /* ---- Navigation: blur-on-scroll, active link, mobile menu, smooth scroll ---- */
+  function initNav() {
+    var nav = $('#site-nav');
+    if (!nav) return;
 
-    window.addEventListener('scroll', () => {
-        // Navbar scroll effect
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        // Active link highlighting
-        const sections = document.querySelectorAll('section[id]');
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-}
-
-// ============================================
-// Initialize Scroll Reveal Animation
-// ============================================
-function initializeScrollReveal() {
-    const revealElements = document.querySelectorAll('.section, .timeline-item, .skill-category, .project-card, .education-card, .certification-card');
-
-    const revealOnScroll = () => {
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('reveal', 'active');
-            }
-        });
+    var onScroll = function () {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
     };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
-}
-
-// ============================================
-// Initialize Back to Top Button
-// ============================================
-function initializeBackToTop() {
-    const backToTopButton = document.getElementById('back-to-top');
-
-    if (backToTopButton) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    var toggle = $('.nv-toggle', nav);
+    var closeMenu = function () {
+      nav.classList.remove('nv-open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    };
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('nv-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
     }
-}
 
-// ============================================
-// Initialize Particles Background
-// ============================================
-function initializeParticles() {
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: ['#667eea', '#764ba2', '#f093fb']
-                },
-                shape: {
-                    type: 'circle'
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: '#667eea',
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: 'grab'
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: 'push'
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 0.5
-                        }
-                    },
-                    push: {
-                        particles_nb: 4
-                    }
-                }
-            },
-            retina_detect: true
+    $all('a[href^="#"]', nav).forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = link.getAttribute('href');
+        var target = id && id.length > 1 ? document.querySelector(id) : null;
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+          closeMenu();
+        }
+      });
+    });
+
+    // Active link via section observation
+    var links = $all('a[href^="#"]', nav);
+    var byId = {};
+    links.forEach(function (l) { byId[l.getAttribute('href').slice(1)] = l; });
+    var sections = $all('main section[id]');
+    if ('IntersectionObserver' in window && sections.length) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var active = byId[en.target.id];
+            if (active) active.classList.add('active');
+          }
         });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      sections.forEach(function (s) { spy.observe(s); });
     }
-}
+  }
+
+  /* ---- Scroll reveal ---- */
+  function initReveal() {
+    var els = $all('.reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); obs.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---- Count-up numbers ---- */
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-count')) || 0;
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduceMotion) { el.textContent = String(target) + suffix; return; }
+    var dur = 1400, start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.round(target * eased);
+      el.textContent = String(val) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = String(target) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  function initCounters() {
+    var nums = $all('[data-count]');
+    if (!nums.length) return;
+    if (!('IntersectionObserver' in window)) { nums.forEach(animateCount); return; }
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { animateCount(en.target); obs.unobserve(en.target); }
+      });
+    }, { threshold: 0.4 });
+    nums.forEach(function (n) { io.observe(n); });
+  }
+
+  /* ---- Back to top ---- */
+  function initBackToTop() {
+    var btn = $('#back-to-top');
+    if (!btn) return;
+    var onScroll = function () { btn.classList.toggle('show', window.scrollY > 600); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* ---- Contact form -> mailto (no backend) ---- */
+  function initContactForm(contact) {
+    var form = $('#ct-form');
+    if (!form) return;
+    var email = 'pranavg0520@outlook.com';
+    if (contact && Array.isArray(contact.contactInfo)) {
+      var em = contact.contactInfo.filter(function (c) { return c.type === 'email'; })[0];
+      if (em && em.value) email = em.value;
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var get = function (n) { var f = form.elements[n]; return f ? f.value.trim() : ''; };
+      var name = get('name'), from = get('email'), subject = get('subject'), message = get('message');
+      var subj = subject || ('Portfolio enquiry' + (name ? ' from ' + name : ''));
+      var body = message + '\n\n— ' + (name || '') + (from ? ' (' + from + ')' : '');
+      window.location.href = 'mailto:' + email +
+        '?subject=' + encodeURIComponent(subj) +
+        '&body=' + encodeURIComponent(body);
+      var note = $('.ct-status', form) || form.querySelector('[data-status]');
+      if (note) note.textContent = 'Opening your email app…';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
