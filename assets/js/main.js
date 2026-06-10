@@ -51,7 +51,7 @@ function renderHero(hero){
 
   // Role line under name
   var roleHtml = '<p class="hero-role"><span class="hero-role-dot" aria-hidden="true"></span>'
-    + 'Available for full-time &middot; Dallas, TX</p>';
+    + 'Available for full-time &middot; San Francisco, CA</p>';
 
   // Lead paragraph (bold the discipline)
   var lead = summary
