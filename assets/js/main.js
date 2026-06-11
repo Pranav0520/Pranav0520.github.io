@@ -336,7 +336,7 @@ function renderWork(projects){
     var stats = p.stats || {};
     var num = ('0' + (idx + 1)).slice(-2);
     var d = (0.05 + (idx || 0) * 0.05).toFixed(2);
-    var img = p.image ? '<img class="wk-img" src="' + esc(p.image) + '" alt="" loading="lazy" aria-hidden="true">' : '';
+    var img = p.image ? '<img class="wk-img" src="' + esc(p.image) + '" alt="" decoding="async" aria-hidden="true">' : '';
 
     var tagHTML = techs.map(function(t){ return '<span class="pill wk-tag">' + esc(t) + '</span>'; }).join('');
 
