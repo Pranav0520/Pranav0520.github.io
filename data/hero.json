@@ -3,7 +3,7 @@
   "greeting": "Hi, I'm",
   "name": "Pranav Grover",
   "title": "Data Analyst",
-  "summary": "Data Analyst with 3+ years of experience in SQL, Python, Power BI, and Tableau, turning large-scale data into actionable insights.",
+  "summary": "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on — end-to-end ETL, data-quality engineering, and executive Power BI & Tableau dashboards.",
   "avatarUrl": "/avatar.png",
   "tagline": "",
   "highlights": [
@@ -13,13 +13,13 @@
       "color": "#FF6B6B"
     },
     {
-      "icon": "fas fa-project-diagram",
-      "text": "12+ Projects Completed",
+      "icon": "fas fa-database",
+      "text": "2M+ Claims Consolidated",
       "color": "#4ECDC4"
     },
     {
-      "icon": "fas fa-code",
-      "text": "Technical Expertise",
+      "icon": "fas fa-heart-pulse",
+      "text": "Healthcare & Revenue Cycle",
       "color": "#FFE66D"
     }
   ],

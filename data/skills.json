@@ -3,57 +3,69 @@
   "sectionTitle": "Skills & Technologies",
   "categories": [
     {
-      "category": "Programming Languages",
+      "category": "Languages & Tools",
       "icon": "fas fa-code",
       "color": "#FF6B6B",
       "skills": [
         "SQL",
         "Python",
-        "R"
+        "pandas",
+        "scikit-learn",
+        "R",
+        "DAX",
+        "Git"
       ]
     },
     {
-      "category": "Frameworks & Libraries",
-      "icon": "fas fa-toolbox",
+      "category": "BI & Reporting",
+      "icon": "fas fa-chart-column",
       "color": "#4ECDC4",
       "skills": [
-        "Scikit-learn"
-      ]
-    },
-    {
-      "category": "Tools & Platforms",
-      "icon": "fas fa-wrench",
-      "color": "#FFE66D",
-      "skills": [
-        "Advanced Excel",
-        "Pivot Tables",
-        "VBA",
         "Power BI",
         "Tableau",
-        "Salesforce",
-        "Hadoop",
-        "Hive",
-        "Impala"
+        "Advanced Excel (VBA)",
+        "KPI Design",
+        "Executive Dashboards"
       ]
     },
     {
-      "category": "Technical Skills",
-      "icon": "fas fa-laptop-code",
-      "color": "#A8DADC",
+      "category": "Data Engineering",
+      "icon": "fas fa-database",
+      "color": "#FFE66D",
       "skills": [
-        "Data Engineering",
         "Snowflake",
-        "MySQL",
-        "PostgreSQL",
+        "Data Warehousing",
         "ETL Pipelines",
         "Data Modeling",
-        "Data Quality Frameworks",
-        "Statistical Analysis",
-        "A/B Testing",
-        "KPI Design",
+        "Data-Quality Frameworks",
+        "MySQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "category": "Healthcare Analytics",
+      "icon": "fas fa-heart-pulse",
+      "color": "#A8DADC",
+      "skills": [
+        "Claims Data",
+        "Denial-Rate Analysis",
+        "Payer Mix",
+        "AR Aging",
+        "Revenue-Cycle KPIs",
+        "HIPAA Compliance"
+      ]
+    },
+    {
+      "category": "Analytics & Statistics",
+      "icon": "fas fa-square-root-variable",
+      "color": "#B19CD9",
+      "skills": [
+        "Regression",
         "Forecasting",
-        "Dashboard Development",
-        "Machine Learning"
+        "A/B Testing",
+        "Cohort Analysis",
+        "Segmentation",
+        "Anomaly Detection"
       ]
     }
   ]

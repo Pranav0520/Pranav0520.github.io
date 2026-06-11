@@ -2,7 +2,7 @@
   "profile": {
     "name": "Pranav Grover",
     "title": "Data Analyst",
-    "bio": "Results-driven Data Analyst with 3+ years of experience engineering ETL pipelines, building scalable dashboards, and translating large-scale data into actionable insights using SQL, Python, Power BI, and Tableau on Snowflake, pursuing an MS in Business Analytics and AI (UT Dallas, May 2026)."
+    "bio": "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive dashboards tracking denial rates, payer mix, and AR aging. I combine end-to-end ETL and automated data-quality engineering with clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
   },
   "contact": {
     "email": "pranavg0520@outlook.com",
@@ -12,7 +12,7 @@
   },
   "siteConfig": {
     "domain": "",
-    "title": "Pranav Grover - Portfolio",
-    "description": "Results-driven Data Analyst with 3+ years of experience engineering ETL pipelines, building scalable dashboards, and translating large-scale data into actionable insights using SQL, Python, Power BI, and Tableau on Snowflake, pursuing an MS in Business Analytics and AI (UT Dallas, May 2026)."
+    "title": "Pranav Grover — Data Analyst, Healthcare & Revenue Cycle Analytics",
+    "description": "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on — end-to-end ETL, data-quality engineering, and executive Power BI & Tableau dashboards."
   }
 }

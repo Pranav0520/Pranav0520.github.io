@@ -3,18 +3,18 @@
   "sectionTitle": "Featured Work",
   "projects": [
     {
-      "title": "Automobile Price Prediction and Customer Segmentation",
-      "description": "Built an ensemble model using Random Forest and Gradient Boosting on 800K+ records, achieving 96% prediction accuracy to support data-driven pricing and revenue optimization. Applied K-Means and Hierarchical clustering for customer segmentation, improving targeting accuracy by 30% through feature engineering, data cleaning, and iterative model tuning. Translated model outputs into actionable pricing tiers and segment profiles, enabling stakeholders to quantify revenue impact and personalize offerings across customer cohorts.",
-      "longDescription": "Built an ensemble model using Random Forest and Gradient Boosting on 800K+ records, achieving 96% prediction accuracy to support data-driven pricing and revenue optimization. Applied K-Means and Hierarchical clustering for customer segmentation, improving targeting accuracy by 30% through feature engineering, data cleaning, and iterative model tuning. Translated model outputs into actionable pricing tiers and segment profiles, enabling stakeholders to quantify revenue impact and personalize offerings across customer cohorts.",
+      "title": "Vehicle Price Prediction & Customer Segmentation",
+      "description": "Trained a Random Forest + Gradient Boosting ensemble on 800,000+ records with iterative feature engineering, achieving an R² of 0.96 on price prediction. Applied K-Means and hierarchical clustering to segment customers, translating segments into clearly differentiated, data-backed pricing tiers.",
+      "longDescription": "Trained a Random Forest + Gradient Boosting ensemble on 800,000+ records with iterative feature engineering, achieving an R² of 0.96 on price prediction. Applied K-Means and hierarchical clustering to segment customers, translating segments into clearly differentiated, data-backed pricing tiers.",
       "category": "Machine Learning",
       "technologies": [
         "Python",
-        "SQL",
-        "Scikit-learn"
+        "scikit-learn",
+        "SQL"
       ],
       "icon": "fas fa-project-diagram",
       "color": "#FF6B6B",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/vehicle-price.jpg",
       "featured": true,
       "github": "",
       "demo": "",
@@ -29,30 +29,29 @@
       }
     },
     {
-      "title": "Az National Trucking – Hadoop, Hive & Tableau Big Data Analytics",
-      "description": "Ingested 8,000+ geolocation records and a 100-driver fleet dataset into HDFS using Cloudera Hadoop (HDP), created Hive tables via DDL, and queried data through Apache Impala connected to Tableau via ODBC driver for large-scale operational analytics. Built interactive Tableau dashboards analyzing unsafe driving events across 100 drivers and multiple truck models, identifying geographic hotspots and risk scores through behavioral analysis to surface key predictors of fleet safety and fuel efficiency. Delivered data-driven recommendations for route optimization and driver coaching, translating complex geospatial and behavioral patterns into actionable fleet performance insights for operational stakeholders.",
-      "longDescription": "Ingested 8,000+ geolocation records and a 100-driver fleet dataset into HDFS using Cloudera Hadoop (HDP), created Hive tables via DDL, and queried data through Apache Impala connected to Tableau via ODBC driver for large-scale operational analytics. Built interactive Tableau dashboards analyzing unsafe driving events across 100 drivers and multiple truck models, identifying geographic hotspots and risk scores through behavioral analysis to surface key predictors of fleet safety and fuel efficiency. Delivered data-driven recommendations for route optimization and driver coaching, translating complex geospatial and behavioral patterns into actionable fleet performance insights for operational stakeholders.",
-      "category": "Big Data Analytics",
+      "title": "Ride-Share Operations Dashboard",
+      "description": "Modeled booking trends, revenue patterns, and trip behavior across payment types and vehicle categories, building KPI cards and DAX measures that surface core operational metrics. Designed time-series views — 10-minute-interval demand curves, day-of-week trends, and hourly heatmaps — exposing peak-demand patterns for operations planning.",
+      "longDescription": "Modeled booking trends, revenue patterns, and trip behavior across payment types and vehicle categories, building KPI cards and DAX measures that surface core operational metrics. Designed time-series views — 10-minute-interval demand curves, day-of-week trends, and hourly heatmaps — exposing peak-demand patterns for operations planning.",
+      "category": "Business Intelligence",
       "technologies": [
-        "Hadoop",
-        "Hive",
-        "Impala",
-        "Tableau"
+        "Power BI",
+        "DAX",
+        "SQL"
       ],
       "icon": "fas fa-project-diagram",
-      "color": "#4ECDC4",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "color": "#FF6B6B",
+      "image": "assets/images/projects/rideshare.jpg",
       "featured": true,
-      "github": "",
-      "demo": "",
+      "github": "https://github.com/Pranav0520/uber-trip-analysis",
+      "demo": "https://github.com/Pranav0520/uber-trip-analysis",
       "links": {
-        "github": "",
-        "demo": "",
-        "live": ""
+        "github": "https://github.com/Pranav0520/uber-trip-analysis",
+        "demo": "https://github.com/Pranav0520/uber-trip-analysis",
+        "live": "https://github.com/Pranav0520/uber-trip-analysis"
       },
       "stats": {
         "status": "Completed",
-        "year": "2025"
+        "year": "2026"
       }
     },
     {
@@ -68,7 +67,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#FFE66D",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/cohort.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/cohort_analysis",
       "demo": "https://github.com/Pranav0520/cohort_analysis",
@@ -96,7 +95,7 @@
       ],
       "icon": "fas fa-brain",
       "color": "#A8DADC",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/realtime-finance.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system",
       "demo": "https://github.com/Pranav0520/real-time-financial-analysis-trading-system",
@@ -123,7 +122,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#B19CD9",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/player-manager.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/Dynamic-Player-Manager",
       "demo": "https://github.com/Pranav0520/Dynamic-Player-Manager",
@@ -138,30 +137,6 @@
       }
     },
     {
-      "title": "Uber Trip Analysis",
-      "description": "An interactive Power BI dashboard analyzing a month of Uber trip data to surface booking trends, customer behavior, revenue generation, and operational efficiency.",
-      "longDescription": "An interactive Power BI dashboard analyzing a month of Uber trip data to surface booking trends, customer behavior, revenue generation, and operational efficiency.",
-      "category": "Business Intelligence",
-      "technologies": [
-        "Power BI"
-      ],
-      "icon": "fas fa-project-diagram",
-      "color": "#FF6B6B",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
-      "featured": false,
-      "github": "https://github.com/Pranav0520/uber-trip-analysis",
-      "demo": "https://github.com/Pranav0520/uber-trip-analysis",
-      "links": {
-        "github": "https://github.com/Pranav0520/uber-trip-analysis",
-        "demo": "https://github.com/Pranav0520/uber-trip-analysis",
-        "live": "https://github.com/Pranav0520/uber-trip-analysis"
-      },
-      "stats": {
-        "status": "Completed",
-        "year": "2026"
-      }
-    },
-    {
       "title": "F1 Data Analysis",
       "description": "A SQL and Tableau analysis of Formula 1 racing data from 1953–2020, modeling race results, driver and team performance, and circuit details to visualize historical trends and key performance metrics.",
       "longDescription": "A SQL and Tableau analysis of Formula 1 racing data from 1953–2020, modeling race results, driver and team performance, and circuit details to visualize historical trends and key performance metrics.",
@@ -172,7 +147,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#4ECDC4",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/f1.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/f1-data-analysis",
       "demo": "https://github.com/Pranav0520/f1-data-analysis",
@@ -197,7 +172,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#FFE66D",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/nursing-home.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/nursing-home-financial-analysis",
       "demo": "https://github.com/Pranav0520/nursing-home-financial-analysis",
@@ -221,7 +196,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#B19CD9",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/car-dealership.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/Car-Dealership-Dashboard",
       "demo": "https://github.com/Pranav0520/Car-Dealership-Dashboard",
@@ -247,7 +222,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#FF6B6B",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/sales-insights.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/Sales-Insights-SQL",
       "demo": "https://github.com/Pranav0520/Sales-Insights-SQL",
@@ -271,7 +246,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#4ECDC4",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/covid-vaccine.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker",
       "demo": "https://github.com/Pranav0520/COVID-19-Global-Vaccine-Tracker",
@@ -296,7 +271,7 @@
       ],
       "icon": "fas fa-project-diagram",
       "color": "#FFE66D",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&q=80&fit=crop",
+      "image": "assets/images/projects/youtube.jpg",
       "featured": false,
       "github": "https://github.com/Pranav0520/Youtube-Channel-Insights",
       "demo": "https://github.com/Pranav0520/Youtube-Channel-Insights",

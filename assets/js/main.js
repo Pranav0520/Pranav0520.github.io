@@ -51,7 +51,7 @@ function renderHero(hero){
 
   // Role line under name
   var roleHtml = '<p class="hero-role"><span class="hero-role-dot" aria-hidden="true"></span>'
-    + 'Available for full-time &middot; San Francisco, CA</p>';
+    + 'Healthcare &amp; Revenue Cycle Analytics &middot; San Francisco, CA</p>';
 
   // Lead paragraph (bold the discipline)
   var lead = summary
@@ -300,70 +300,77 @@ function renderSkills(skills){
 function renderWork(projects){
   var data = projects || {};
   var list = Array.isArray(data.projects) ? data.projects : [];
+  try { window.__WK_PROJECTS = list; } catch(e){}
   var title = data.sectionTitle || 'Selected work';
-
   var featured = list.filter(function(p){ return p && p.featured; });
   var rest = list.filter(function(p){ return !(p && p.featured); });
 
-  var featHTML = featured.length
-    ? '<div class="wk-featured">' + featured.map(function(p,i){ return card(p, true, i); }).join('') + '</div>'
-    : '';
-  var gridHTML = rest.length
-    ? '<div class="wk-grid">' + rest.map(function(p,i){ return card(p, false, i + featured.length); }).join('') + '</div>'
-    : '';
+  var ICONS = {
+    'machine learning':'fa-solid fa-brain',
+    'business intelligence':'fa-solid fa-chart-pie',
+    'data analysis':'fa-solid fa-magnifying-glass-chart',
+    'data engineering':'fa-solid fa-database',
+    'big data analytics':'fa-solid fa-server',
+    'data application':'fa-solid fa-window-maximize'
+  };
+
+  var featHTML = featured.length ? '<div class="wk-featured">' + featured.map(function(p,i){ return card(p,true,i); }).join('') + '</div>' : '';
+  var gridHTML = rest.length ? '<div class="wk-grid">' + rest.map(function(p,i){ return card(p,false,i+featured.length); }).join('') + '</div>' : '';
 
   return ''+
     '<div class="container">'+
       '<div class="section-head reveal">'+
         '<span class="eyebrow">Selected Work</span>'+
         '<h2 class="section-title">' + esc(title) + '</h2>'+
+        '<p class="wk-hint mono"><i class="fa-solid fa-arrow-pointer" aria-hidden="true"></i> Click any project to expand</p>'+
       '</div>'+
-      featHTML + gridHTML +
+      '<div class="wk-wrap">' + featHTML + gridHTML + '</div>'+
     '</div>';
 
   function card(p, hero, idx){
     var color = p.color || 'var(--accent)';
-    var icon = p.icon || 'fa-solid fa-chart-line';
+    var cat = p.category || 'Project';
+    var icon = ICONS[String(cat).toLowerCase()] || p.icon || 'fa-solid fa-chart-line';
     var techs = Array.isArray(p.technologies) ? p.technologies : [];
     var links = p.links || {};
     var stats = p.stats || {};
-    var d = (0.06 + (idx || 0) * 0.05).toFixed(2);
+    var num = ('0' + (idx + 1)).slice(-2);
+    var d = (0.05 + (idx || 0) * 0.05).toFixed(2);
+    var img = p.image ? '<img class="wk-img" src="' + esc(p.image) + '" alt="" loading="lazy" aria-hidden="true">' : '';
 
-    var tagHTML = techs.map(function(t){
-      return '<span class="pill wk-tag">' + esc(t) + '</span>';
-    }).join('');
+    var tagHTML = techs.map(function(t){ return '<span class="pill wk-tag">' + esc(t) + '</span>'; }).join('');
 
     var gh = links.github && String(links.github).trim();
     var demo = (links.demo && String(links.demo).trim()) || (links.live && String(links.live).trim());
-    var linkParts = [];
-    if(gh){
-      linkParts.push('<a class="wk-link" href="' + esc(gh) + '" target="_blank" rel="noopener noreferrer" aria-label="View source code for ' + esc(p.title || 'project') + ' on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>');
-    }
-    if(demo){
-      linkParts.push('<a class="wk-link" href="' + esc(demo) + '" target="_blank" rel="noopener noreferrer" aria-label="Open live demo of ' + esc(p.title || 'project') + '"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Live Demo</a>');
-    }
-    var linksHTML = linkParts.length
-      ? '<div class="wk-links">' + linkParts.join('') + '</div>'
-      : '<span class="wk-case mono"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Case study</span>';
+    var lp = [];
+    if(gh) lp.push('<a class="wk-link" href="' + esc(gh) + '" target="_blank" rel="noopener noreferrer" aria-label="Source code for ' + esc(p.title || 'project') + '"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>');
+    if(demo) lp.push('<a class="wk-link" href="' + esc(demo) + '" target="_blank" rel="noopener noreferrer" aria-label="Live demo of ' + esc(p.title || 'project') + '"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Live</a>');
+    var linksHTML = lp.length ? '<div class="wk-links">' + lp.join('') + '</div>' : '<span class="wk-case mono"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Case study</span>';
 
-    var status = stats.status ? '<span class="wk-status"><span class="wk-dot"></span>' + esc(stats.status) + '</span>' : '';
     var year = stats.year ? '<span class="wk-year">' + esc(stats.year) + '</span>' : '';
-    var metaHTML = (status || year)
-      ? '<span class="wk-meta">' + status + year + '</span>'
-      : '';
+    var metaHTML = year ? '<span class="wk-meta">' + year + '</span>' : '';
 
     return ''+
-      '<article class="glass glass--hover wk-card reveal' + (hero ? ' wk-hero' : '') + '" style="--wk-c:' + color + ';--d:' + d + 's">'+
-        '<div class="wk-cardtop">'+
-          '<div>'+
-            '<span class="wk-cat">' + esc(p.category || 'Project') + '</span>'+
-            '<h3 class="wk-title">' + esc(p.title || 'Untitled') + '</h3>'+
+      '<article class="wk-card reveal' + (hero ? ' wk-hero' : '') + '" style="--wk-c:' + color + ';--d:' + d + 's" data-wk="' + idx + '" role="button" tabindex="0" aria-label="' + esc(p.title || 'Project') + ' — view details">'+
+        '<div class="wk-tilt">'+
+          '<span class="wk-ring" aria-hidden="true"></span>'+
+          '<div class="wk-media">'+
+            img +
+            '<span class="wk-idx" aria-hidden="true">' + num + '</span>'+
+            (hero ? '<span class="wk-badge">Featured</span>' : '')+
+            '<span class="wk-expand" aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span>'+
           '</div>'+
-          '<span class="wk-ico"><i class="' + esc(icon) + '" aria-hidden="true"></i></span>'+
+          '<div class="wk-content">'+
+            '<div class="wk-top">'+
+              '<span class="wk-ico"><i class="' + esc(icon) + '" aria-hidden="true"></i></span>'+
+              '<span class="wk-cat">' + esc(cat) + '</span>'+
+            '</div>'+
+            '<h3 class="wk-title">' + esc(p.title || 'Untitled') + '</h3>'+
+            (p.description ? '<p class="wk-desc">' + esc(p.description) + '</p>' : '')+
+            (tagHTML ? '<div class="wk-tags">' + tagHTML + '</div>' : '')+
+            '<div class="wk-foot">' + linksHTML + metaHTML + '</div>'+
+          '</div>'+
         '</div>'+
-        (p.description ? '<p class="wk-desc">' + esc(p.description) + '</p>' : '')+
-        (tagHTML ? '<div class="wk-tags">' + tagHTML + '</div>' : '')+
-        '<div class="wk-foot">' + linksHTML + metaHTML + '</div>'+
       '</article>';
   }
 
@@ -762,4 +769,115 @@ function renderFooter(footer) {
   } else {
     boot();
   }
+})();
+
+/* ---- Work cards: 3D tilt + cursor spotlight ---- */
+(function () {
+  if (window.matchMedia &&
+     (window.matchMedia('(pointer: coarse)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+  var MAX = 6.5;
+  document.addEventListener('pointermove', function (e) {
+    var card = e.target && e.target.closest && e.target.closest('.wk-card');
+    if (!card) return;
+    var tilt = card.querySelector('.wk-tilt');
+    if (!tilt) return;
+    var r = card.getBoundingClientRect();
+    var px = (e.clientX - r.left) / r.width;
+    var py = (e.clientY - r.top) / r.height;
+    tilt.style.setProperty('--ry', ((px - 0.5) * MAX).toFixed(2) + 'deg');
+    tilt.style.setProperty('--rx', ((0.5 - py) * MAX).toFixed(2) + 'deg');
+    tilt.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+    tilt.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+  }, { passive: true });
+  document.addEventListener('mouseout', function (e) {
+    var card = e.target && e.target.closest && e.target.closest('.wk-card');
+    if (!card) return;
+    if (e.relatedTarget && card.contains(e.relatedTarget)) return;
+    var tilt = card.querySelector('.wk-tilt');
+    if (tilt) { tilt.style.setProperty('--rx', '0deg'); tilt.style.setProperty('--ry', '0deg'); }
+  });
+})();
+
+/* ---- Work: click-to-expand project modal ---- */
+(function () {
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  var modal = document.createElement('div');
+  modal.className = 'wk-modal';
+  modal.id = 'wk-modal';
+  modal.setAttribute('role','dialog');
+  modal.setAttribute('aria-modal','true');
+  modal.setAttribute('aria-hidden','true');
+  modal.setAttribute('aria-labelledby','wkm-title');
+  modal.innerHTML =
+    '<div class="wk-modal-scrim" data-wk-close></div>'+
+    '<div class="wk-modal-card" role="document">'+
+      '<button class="wk-modal-x" type="button" aria-label="Close details" data-wk-close><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>'+
+      '<div class="wk-modal-media"><img id="wkm-img" alt="" src=""></div>'+
+      '<div class="wk-modal-body">'+
+        '<span class="wk-cat" id="wkm-cat"></span>'+
+        '<h3 class="wk-modal-title" id="wkm-title"></h3>'+
+        '<p class="wk-modal-desc" id="wkm-desc"></p>'+
+        '<div class="wk-tags" id="wkm-tags"></div>'+
+        '<div class="wk-modal-foot" id="wkm-foot"></div>'+
+      '</div>'+
+    '</div>';
+  document.body.appendChild(modal);
+
+  var cardEl = modal.querySelector('.wk-modal-card');
+  var imgEl  = modal.querySelector('#wkm-img');
+  var lastFocus = null;
+
+  function open(p, trigger){
+    lastFocus = trigger || null;
+    cardEl.style.setProperty('--wk-c', p.color || 'var(--accent)');
+    if (p.image){ imgEl.src = p.image; imgEl.alt = (p.title||'project') + ' illustration'; imgEl.parentNode.style.display=''; }
+    else { imgEl.removeAttribute('src'); imgEl.parentNode.style.display='none'; }
+    modal.querySelector('#wkm-cat').textContent = p.category || 'Project';
+    modal.querySelector('#wkm-title').textContent = p.title || 'Untitled';
+    modal.querySelector('#wkm-desc').textContent = p.longDescription || p.description || '';
+    var techs = Array.isArray(p.technologies) ? p.technologies : [];
+    modal.querySelector('#wkm-tags').innerHTML = techs.map(function(t){ return '<span class="pill wk-tag">'+esc(t)+'</span>'; }).join('');
+    var links = p.links || {};
+    var gh = links.github && String(links.github).trim();
+    var demo = (links.demo && String(links.demo).trim()) || (links.live && String(links.live).trim());
+    var lp = [];
+    if(gh)   lp.push('<a class="btn btn--ghost" href="'+esc(gh)+'" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span>View Code</span></a>');
+    if(demo) lp.push('<a class="btn btn--primary" href="'+esc(demo)+'" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Live Demo</span></a>');
+    var yr = (p.stats && p.stats.year) ? '<span class="wk-modal-year mono">'+esc(p.stats.year)+'</span>' : '';
+    modal.querySelector('#wkm-foot').innerHTML = (lp.length ? '<div class="wk-modal-links">'+lp.join('')+'</div>' : '<span></span>') + yr;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    var x = modal.querySelector('.wk-modal-x'); if(x) x.focus();
+  }
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function openByCard(c, trigger){
+    var idx = parseInt(c.getAttribute('data-wk'), 10);
+    var list = window.__WK_PROJECTS || [];
+    if (list[idx]) open(list[idx], trigger || c);
+  }
+
+  document.addEventListener('click', function(e){
+    if (e.target.closest('[data-wk-close]')) { close(); return; }
+    var c = e.target.closest && e.target.closest('.wk-card');
+    if (c){
+      if (e.target.closest('a')) return;   // let project links work
+      e.preventDefault();
+      openByCard(c);
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('open')){ close(); return; }
+    var t = e.target;
+    if ((e.key === 'Enter' || e.key === ' ') && t && t.classList && t.classList.contains('wk-card')){
+      e.preventDefault();
+      openByCard(t, t);
+    }
+  });
 })();

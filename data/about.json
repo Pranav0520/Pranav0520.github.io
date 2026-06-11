@@ -3,26 +3,32 @@
   "sectionTitle": "About Me",
   "image": "assets/images/profile.jpg",
   "paragraphs": [
-    "Results-driven Data Analyst with 3+ years of experience engineering ETL pipelines, building scalable dashboards, and translating large-scale data into actionable insights using SQL, Python, Power BI, and Tableau on Snowflake, pursuing an MS in Business Analytics and AI (UT Dallas, May 2026)."
+    "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive dashboards tracking denial rates, payer mix, and AR aging. I combine end-to-end ETL and automated data-quality engineering with clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
   ],
   "statistics": [
     {
-      "icon": "fas fa-project-diagram",
-      "value": "12+",
-      "label": "Projects Completed",
+      "icon": "fas fa-database",
+      "value": "2M+",
+      "label": "Claims Consolidated",
       "color": "#FF6B6B"
     },
     {
-      "icon": "fas fa-briefcase",
-      "value": "3+",
-      "label": "Years Experience",
+      "icon": "fas fa-circle-check",
+      "value": "30%",
+      "label": "Fewer Data Mismatches",
       "color": "#4ECDC4"
     },
     {
-      "icon": "fas fa-code",
-      "value": "26+",
-      "label": "Technologies",
+      "icon": "fas fa-bug-slash",
+      "value": "35%",
+      "label": "Fewer Reporting Errors",
       "color": "#FFE66D"
+    },
+    {
+      "icon": "fas fa-clock",
+      "value": "25%",
+      "label": "Less Manual Reporting",
+      "color": "#A8DADC"
     }
   ],
   "downloadCV": {
