@@ -3,7 +3,8 @@
   "sectionTitle": "About Me",
   "image": "assets/images/profile.jpg",
   "paragraphs": [
-    "Data & Business Analyst with 3+ years across operations, marketing, finance, and revenue reporting, building the data infrastructure businesses rely on and delivering insights that drive real decisions. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive Power BI & Tableau dashboards. I pair end-to-end ETL and automated data-quality engineering with ML models reaching 96% prediction accuracy and clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
+    "Data & Business Analyst with 3+ years of experience across operations, marketing, finance, and revenue reporting — building the data infrastructure businesses rely on and delivering insights that drive real decisions.",
+    "I've designed Snowflake pipelines, ML models with 96% prediction accuracy, and Power BI and Tableau dashboards that have measurably reduced reporting effort, improved data quality, and sharpened how teams plan, price, and perform. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
   ],
   "statistics": [
     {
