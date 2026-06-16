@@ -1,20 +1,20 @@
 {
   "_instructions": "Site-wide configuration and meta tags.",
-  "title": "Pranav Grover | Data Analyst — Healthcare & Revenue Cycle Analytics",
-  "description": "Data Analyst with 3+ years in healthcare & revenue-cycle analytics — Snowflake, SQL, Python, Power BI & Tableau. M.S. Business Analytics & AI, UT Dallas.",
-  "keywords": "Pranav Grover, Data Analyst, Healthcare Analytics, Revenue Cycle, Claims Data, Snowflake, SQL, Python, Power BI, Tableau, Portfolio",
+  "title": "Pranav Grover | Data & Business Analyst",
+  "description": "Data & Business Analyst with 3+ years across operations, marketing, finance & revenue reporting — Snowflake, SQL, Python, ML, Power BI & Tableau. M.S. Business Analytics & AI, UT Dallas.",
+  "keywords": "Pranav Grover, Data Analyst, Business Analyst, Marketing Analytics, Operations Analytics, Finance Analytics, Revenue Reporting, Snowflake, SQL, Python, Power BI, Tableau, Machine Learning, Portfolio",
   "author": "Pranav Grover",
   "siteName": "Pranav Grover",
-  "siteTitle": "Pranav Grover | Data Analyst — Healthcare & Revenue Cycle Analytics",
+  "siteTitle": "Pranav Grover | Data & Business Analyst",
   "meta": {
-    "title": "Pranav Grover | Data Analyst — Healthcare & Revenue Cycle Analytics",
-    "description": "Data Analyst with 3+ years in healthcare & revenue-cycle analytics — Snowflake, SQL, Python, Power BI & Tableau. M.S. Business Analytics & AI, UT Dallas.",
+    "title": "Pranav Grover | Data & Business Analyst",
+    "description": "Data & Business Analyst with 3+ years across operations, marketing, finance & revenue reporting — Snowflake, SQL, Python, ML, Power BI & Tableau. M.S. Business Analytics & AI, UT Dallas.",
     "author": "Pranav Grover",
-    "keywords": "Pranav Grover, Data Analyst, Healthcare Analytics, Revenue Cycle, Claims Data, Snowflake, SQL, Python, Power BI, Tableau, Portfolio"
+    "keywords": "Pranav Grover, Data Analyst, Business Analyst, Marketing Analytics, Operations Analytics, Finance Analytics, Revenue Reporting, Snowflake, SQL, Python, Power BI, Tableau, Machine Learning, Portfolio"
   },
   "branding": {
     "name": "Pranav Grover",
-    "tagline": "Data Analyst",
+    "tagline": "Data & Business Analyst",
     "logo": "/logo.png"
   },
   "settings": {

@@ -2,8 +2,8 @@
   "_instructions": "Hero section content.",
   "greeting": "Hi, I'm",
   "name": "Pranav Grover",
-  "title": "Data Analyst",
-  "summary": "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on — end-to-end ETL, data-quality engineering, and executive Power BI & Tableau dashboards.",
+  "title": "Data & Business Analyst",
+  "summary": "Data & Business Analyst with 3+ years across operations, marketing, finance, and revenue reporting — building the data infrastructure teams rely on and the Snowflake pipelines, ML models, and Power BI & Tableau dashboards that drive real decisions.",
   "avatarUrl": "/avatar.png",
   "tagline": "",
   "highlights": [
@@ -13,13 +13,13 @@
       "color": "#FF6B6B"
     },
     {
-      "icon": "fas fa-database",
-      "text": "2M+ Claims Consolidated",
+      "icon": "fas fa-bullseye",
+      "text": "96% Model Accuracy",
       "color": "#4ECDC4"
     },
     {
-      "icon": "fas fa-heart-pulse",
-      "text": "Healthcare & Revenue Cycle",
+      "icon": "fas fa-database",
+      "text": "2M+ Records Consolidated",
       "color": "#FFE66D"
     }
   ],
@@ -47,7 +47,7 @@
     },
     {
       "platform": "Email",
-      "url": "mailto:pranavg0520@outlook.com",
+      "url": "mailto:gropranav0520@gmail.com",
       "icon": "fas fa-envelope"
     }
   ],

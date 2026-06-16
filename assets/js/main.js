@@ -745,7 +745,7 @@ function renderFooter(footer) {
   function initContactForm(contact) {
     var form = $('#ct-form');
     if (!form) return;
-    var email = 'pranavg0520@outlook.com';
+    var email = 'gropranav0520@gmail.com';
     if (contact && Array.isArray(contact.contactInfo)) {
       var em = contact.contactInfo.filter(function (c) { return c.type === 'email'; })[0];
       if (em && em.value) email = em.value;

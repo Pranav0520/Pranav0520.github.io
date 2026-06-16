@@ -1,18 +1,18 @@
 {
   "profile": {
     "name": "Pranav Grover",
-    "title": "Data Analyst",
-    "bio": "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive dashboards tracking denial rates, payer mix, and AR aging. I combine end-to-end ETL and automated data-quality engineering with clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
+    "title": "Data & Business Analyst",
+    "bio": "Data & Business Analyst with 3+ years across operations, marketing, finance, and revenue reporting, building the data infrastructure businesses rely on and delivering insights that drive real decisions. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive Power BI & Tableau dashboards. I pair end-to-end ETL and automated data-quality engineering with ML models reaching 96% prediction accuracy and clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
   },
   "contact": {
-    "email": "pranavg0520@outlook.com",
+    "email": "gropranav0520@gmail.com",
     "phone": "469.569.2821",
     "githubUsername": "Pranav0520",
     "linkedin": "https://linkedin.com/in/pranav-grover-utd"
   },
   "siteConfig": {
     "domain": "",
-    "title": "Pranav Grover — Data Analyst, Healthcare & Revenue Cycle Analytics",
-    "description": "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on — end-to-end ETL, data-quality engineering, and executive Power BI & Tableau dashboards."
+    "title": "Pranav Grover — Data & Business Analyst",
+    "description": "Data & Business Analyst with 3+ years across operations, marketing, finance, and revenue reporting — Snowflake pipelines, ML models, and executive Power BI & Tableau dashboards."
   }
 }

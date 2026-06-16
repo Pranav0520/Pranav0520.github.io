@@ -10,10 +10,12 @@
         "SQL",
         "Python",
         "pandas",
+        "NumPy",
         "scikit-learn",
         "R",
         "DAX",
-        "Git"
+        "Git",
+        "Jupyter Notebook"
       ]
     },
     {
@@ -24,7 +26,9 @@
         "Power BI",
         "Tableau",
         "Advanced Excel (VBA)",
+        "Salesforce",
         "KPI Design",
+        "Data Storytelling",
         "Executive Dashboards"
       ]
     },
@@ -34,18 +38,45 @@
       "color": "#FFE66D",
       "skills": [
         "Snowflake",
-        "Data Warehousing",
         "ETL Pipelines",
         "Data Modeling",
+        "Data Warehousing",
         "Data-Quality Frameworks",
+        "Hadoop (Hive, Impala)",
         "MySQL",
-        "PostgreSQL"
+        "PostgreSQL",
+        "n8n Automation"
       ]
     },
     {
-      "category": "Healthcare Analytics",
-      "icon": "fas fa-heart-pulse",
+      "category": "Analytics & Statistics",
+      "icon": "fas fa-square-root-variable",
       "color": "#A8DADC",
+      "skills": [
+        "A/B Testing",
+        "Hypothesis Testing",
+        "Time Series Forecasting",
+        "Cohort Analysis",
+        "Customer Segmentation",
+        "Anomaly Detection"
+      ]
+    },
+    {
+      "category": "Machine Learning",
+      "icon": "fas fa-robot",
+      "color": "#B19CD9",
+      "skills": [
+        "Random Forest",
+        "Gradient Boosting",
+        "K-Means Clustering",
+        "Predictive Modeling",
+        "Generative AI Tools"
+      ]
+    },
+    {
+      "category": "Healthcare & Domain",
+      "icon": "fas fa-heart-pulse",
+      "color": "#FF9F68",
       "skills": [
         "Claims Data",
         "Denial-Rate Analysis",
@@ -56,16 +87,13 @@
       ]
     },
     {
-      "category": "Analytics & Statistics",
-      "icon": "fas fa-square-root-variable",
-      "color": "#B19CD9",
+      "category": "Certifications",
+      "icon": "fas fa-certificate",
+      "color": "#6BCB77",
       "skills": [
-        "Regression",
-        "Forecasting",
-        "A/B Testing",
-        "Cohort Analysis",
-        "Segmentation",
-        "Anomaly Detection"
+        "AWS Certified Cloud Practitioner",
+        "Google Data Analytics",
+        "Intermediate R"
       ]
     }
   ]

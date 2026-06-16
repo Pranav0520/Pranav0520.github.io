@@ -29,6 +29,33 @@
       }
     },
     {
+      "title": "Az National Trucking: Big Data Governance Pipeline",
+      "description": "Built a big data governance pipeline for a trucking company lacking centralized visibility across 100+ drivers, loading 8,000+ GPS records into Hadoop with Hive and Impala, and building Tableau dashboards that reduced route time by 12%.",
+      "longDescription": "Built a big data governance pipeline for a trucking company lacking centralized visibility across 100+ drivers, loading 8,000+ GPS records into Hadoop with Hive and Impala, and building Tableau dashboards that reduced route time by 12%.",
+      "category": "Data Engineering",
+      "technologies": [
+        "Hadoop",
+        "Hive",
+        "Impala",
+        "Tableau"
+      ],
+      "icon": "fas fa-truck-fast",
+      "color": "#4ECDC4",
+      "image": "",
+      "featured": true,
+      "github": "",
+      "demo": "",
+      "links": {
+        "github": "",
+        "demo": "",
+        "live": ""
+      },
+      "stats": {
+        "status": "Completed",
+        "year": "2024"
+      }
+    },
+    {
       "title": "Ride-Share Operations Dashboard",
       "description": "Modeled booking trends, revenue patterns, and trip behavior across payment types and vehicle categories, building KPI cards and DAX measures that surface core operational metrics. Designed time-series views — 10-minute-interval demand curves, day-of-week trends, and hourly heatmaps — exposing peak-demand patterns for operations planning.",
       "longDescription": "Modeled booking trends, revenue patterns, and trip behavior across payment types and vehicle categories, building KPI cards and DAX measures that surface core operational metrics. Designed time-series views — 10-minute-interval demand curves, day-of-week trends, and hourly heatmaps — exposing peak-demand patterns for operations planning.",

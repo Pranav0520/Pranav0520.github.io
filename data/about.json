@@ -3,19 +3,19 @@
   "sectionTitle": "About Me",
   "image": "assets/images/profile.jpg",
   "paragraphs": [
-    "Data Analyst with 3+ years turning claims, revenue, and operations data into decisions leadership acts on. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive dashboards tracking denial rates, payer mix, and AR aging. I combine end-to-end ETL and automated data-quality engineering with clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
+    "Data & Business Analyst with 3+ years across operations, marketing, finance, and revenue reporting, building the data infrastructure businesses rely on and delivering insights that drive real decisions. At Veracyte, a NASDAQ-listed genomic diagnostics company, I built a Snowflake data mart consolidating 2M+ medical claims and shipped executive Power BI & Tableau dashboards. I pair end-to-end ETL and automated data-quality engineering with ML models reaching 96% prediction accuracy and clear, decision-ready reporting. M.S. in Business Analytics & AI, UT Dallas (May 2026)."
   ],
   "statistics": [
     {
-      "icon": "fas fa-database",
-      "value": "2M+",
-      "label": "Claims Consolidated",
+      "icon": "fas fa-bullseye",
+      "value": "96%",
+      "label": "Model Accuracy",
       "color": "#FF6B6B"
     },
     {
-      "icon": "fas fa-circle-check",
-      "value": "30%",
-      "label": "Fewer Data Mismatches",
+      "icon": "fas fa-database",
+      "value": "2M+",
+      "label": "Records Consolidated",
       "color": "#4ECDC4"
     },
     {
@@ -25,9 +25,9 @@
       "color": "#FFE66D"
     },
     {
-      "icon": "fas fa-clock",
-      "value": "25%",
-      "label": "Less Manual Reporting",
+      "icon": "fas fa-chart-line",
+      "value": "15%",
+      "label": "Revenue Growth Driven",
       "color": "#A8DADC"
     }
   ],

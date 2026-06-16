@@ -3,29 +3,28 @@
   "sectionTitle": "Professional Experience",
   "experiences": [
     {
-      "title": "Data Analyst",
-      "company": "Davidson-Gundy Alumni Center, UT Dallas",
+      "title": "Business Analyst (Co-op)",
+      "company": "Davidson Gundy Alumni Center, UT Dallas",
       "period": "Jan 2026 – May 2026",
       "location": "Dallas, TX",
-      "description": "Engineered Python ETL pipelines and validation rules for advancement reporting at UT Dallas.",
+      "description": "Built Python ETL pipelines and rebuilt legacy query logic to power advancement reporting at UT Dallas.",
       "responsibilities": [
-        "Engineered Python ETL pipelines to extract, clean, and standardize 10,000+ alumni engagement records, replacing manual preparation with repeatable, audit-ready datasets for advancement reporting",
-        "Built deduplication and validation rules that eliminated duplicate records, missing attributes, and inconsistent formats, improving completeness and accuracy of stakeholder reporting",
-        "Diagnosed and rebuilt unindexed joins in legacy Microsoft Access databases, cutting query execution time and accelerating report delivery for the operations team"
+        "Built Python-based ETL pipelines to extract, clean, and standardize 10,000+ alumni records from LinkedIn profile exports, improving dataset accuracy by 30% for advancement reporting",
+        "Identified unindexed joins in legacy Microsoft Access databases and rebuilt query logic, improving query performance by 40% and accelerating report delivery for the operations team"
       ],
       "logo": "assets/images/logos/utdallas.png"
     },
     {
-      "title": "Data Analyst Intern",
-      "company": "Veracyte",
+      "title": "Data Analyst (Co-op)",
+      "company": "Veracyte, Inc.",
       "period": "Aug 2025 – Nov 2025",
       "location": "San Francisco, CA",
-      "description": "Designed and built a Snowflake data mart consolidating 2M+ medical claims records from 3 source systems — the single source of truth for company revenue-cycle reporting Developed cross-system SQL reconciliation pipelines that cut data mismatches by 30%, and implemented 8 automated quality checks for near-real-time anomaly detection on HIPAA-regulated claims data Delivered 5 Power BI and Tableau dashboards tracking denial rates, payer mix, and AR aging buckets, giving leadership live visibility into revenue-cycle performance Authored reusable DAX measures that standardized KPI logic across reports and reduced manual reporting time by 20%",
+      "description": "Built a Snowflake data mart consolidating 2M+ medical claims and shipped automated quality checks and executive dashboards for revenue-cycle leadership.",
       "responsibilities": [
-        "Designed and built a Snowflake data mart consolidating 2M+ medical claims records from 3 source systems — the single source of truth for company revenue-cycle reporting",
-        "Developed cross-system SQL reconciliation pipelines that cut data mismatches by 30%, and implemented 8 automated quality checks for near-real-time anomaly detection on HIPAA-regulated claims data",
-        "Delivered 5 Power BI and Tableau dashboards tracking denial rates, payer mix, and AR aging buckets, giving leadership live visibility into revenue-cycle performance",
-        "Authored reusable DAX measures that standardized KPI logic across reports and reduced manual reporting time by 20%"
+        "Collaborated with revenue cycle, billing, payer relations, and finance teams to design a unified Snowflake data mart consolidating 2M+ medical claims records from 3 source systems, establishing a single source of truth for revenue cycle reporting",
+        "Implemented 8 automated SQL-based validation rules with threshold alerts across 3 source systems, improving data reliability by 30% and ensuring HIPAA-regulated claims data reached leadership dashboards clean and anomaly-free",
+        "Deployed 5 interactive Power BI and Tableau dashboards with reusable DAX measures tracking denial rates, payer mix, and AR aging, reducing manual reporting effort by 40% for revenue cycle leadership",
+        "Automated weekly revenue cycle report summaries by integrating Python with generative AI to translate raw Power BI KPI outputs into narrative leadership briefs, reducing report preparation time by 50%"
       ],
       "logo": "assets/images/logos/veracyte.png"
     },
@@ -33,13 +32,13 @@
       "title": "Data Analyst",
       "company": "Elite Marque",
       "period": "Jun 2021 – Jun 2024",
-      "location": "New Delhi, India",
-      "description": "Standardized and transformed 80,000+ records across 4 business units with reusable Python and SQL pipelines (ingestion, deduplication, transformation), cutting reporting errors by 35% Built automated Power BI and Excel dashboards with 20+ dynamic visualizations, reducing manual reporting effort by 25% and helping senior stakeholders identify trends faster Traced and resolved 3 critical pipeline failures corrupting downstream reports, partnering with operations to fix upstream data-entry issues at the source Conducted exploratory analysis on revenue and operations datasets, presenting patterns and outliers that informed strategic decisions in monthly leadership reviews",
+      "location": "Delhi, India",
+      "description": "Standardized 90,000+ records across 4 business units and built dashboards and EDA that drove 15% revenue growth across client accounts.",
       "responsibilities": [
-        "Standardized and transformed 80,000+ records across 4 business units with reusable Python and SQL pipelines (ingestion, deduplication, transformation), cutting reporting errors by 35%",
-        "Built automated Power BI and Excel dashboards with 20+ dynamic visualizations, reducing manual reporting effort by 25% and helping senior stakeholders identify trends faster",
-        "Traced and resolved 3 critical pipeline failures corrupting downstream reports, partnering with operations to fix upstream data-entry issues at the source",
-        "Conducted exploratory analysis on revenue and operations datasets, presenting patterns and outliers that informed strategic decisions in monthly leadership reviews"
+        "Standardized 90,000+ customer and sales records across 4 business units using reusable Python and SQL pipelines for ingestion, deduplication, and transformation, reducing reporting errors by 35%",
+        "Built automated Power BI and Excel dashboards with 20+ dynamic visualizations tracking sales performance and revenue trends, reducing manual reporting effort by 25% for senior stakeholders",
+        "Diagnosed 3 critical pipeline failures across 4 business units, traced root causes to upstream data entry gaps, and implemented standardized templates and validation checks at source, improving data quality by 30%",
+        "Analyzed revenue and churn trends across 4 business units using EDA, identified pricing and marketing gaps, and presented findings in monthly leadership reviews, driving 15% revenue growth across client accounts"
       ],
       "logo": "assets/images/logos/elitemarque.png"
     }
